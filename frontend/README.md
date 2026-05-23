@@ -10,7 +10,7 @@ It provides two main panels:
 👨‍🎓 Student Panel → Learns courses, completes assignments, tracks progress, and earns certificates
 
 The system is built to simulate a real-world EdTech platform with structured learning paths and performance tracking.
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 👨‍💼 Admin Panel Features -> 
 
 - 📊 Dashboard Overview :
@@ -69,7 +69,7 @@ The system is built to simulate a real-world EdTech platform with structured lea
       Update admin profile
       Change name, email, password
      
-     
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------     
      
 👨‍🎓 Student Panel Features -> 
 
