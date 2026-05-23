@@ -1,0 +1,443 @@
+@import "tailwindcss";
+/* Base Styles & Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+/* Page Layout Container */
+.login-page-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Section: Form Split */
+.form-section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Section: Illustration Split */
+.illustration-section {
+  display: none; /* Hidden on small screens/mobile */
+  position: relative;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #F3F5F9;
+  padding: 2rem;
+}
+
+/* Show illustration section on large screens */
+@media (min-width: 1024px) {
+  .form-section {
+    width: 50%;
+  }
+  .illustration-section {
+    display: flex;
+  }
+}
+
+.illustration-wrapper {
+  width: 100%;
+  max-width: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Signup Form Wrapper */
+.signup-card {
+  width: 100%;
+  max-width: 448px;
+  padding: 3rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .signup-card {
+    padding: 3rem;
+  }
+}
+
+.form-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #3B592D;
+}
+
+/* Checkbox Section */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.custom-checkbox {
+  height: 1rem;
+  width: 1rem;
+  accent-color: #3B592D;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.underline-link {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #3B592D;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2c4422;
+}
+/* ==========================================================================
+   ⚡️ STUDENT DASHBOARD LAYOUT & STYLES (Color Unified: #3B592D)
+   ========================================================================== */
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9fafb;
+  overflow: hidden;
+}
+
+/* Sidebar Wrapper */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3B592D;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px dashed rgba(59, 89, 45, 0.1);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex-grow: 1;
+}
+
+/* Sidebar Link Item States */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.925rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(59, 89, 45, 0.05);
+  color: #3B592D;
+}
+
+.sidebar-link.active {
+  background-color: #3B592D;
+  color: #ffffff;
+}
+
+/* Sidebar Footer User Details Profile Card */
+.sidebar-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.user-profile-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem 0.5rem;
+}
+
+.user-name-display {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.user-role-tag {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Sidebar Logout Control Action Button */
+.logout-action-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-action-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Dashboard Panel Dynamic Screen View Content Base Container */
+.main-content-view {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.blank-page-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.blank-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.blank-page-desc {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+/* Welcome Page Smooth Interactions */
+/* Welcome Page Smooth Interactions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Infinite Zoom In / Zoom Out Background Animation */
+/* Welcome Page Smooth Interactions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Infinite Zoom In / Zoom Out Background Animation */
+@keyframes cosmicZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08); /* Smooth subtle expansion */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Attaches breathing zoom effect directly onto the full screen graphic wrapper */
+.moving-bg-layer {
+  animation: cosmicZoom 20s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.nav-hover-link:hover {
+  color: #A3E635 !important;
+}
+
+.welcome-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.welcome-btn-primary:hover, .welcome-btn-cta:hover {
+  background: #476b37 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59, 89, 45, 0.6) !important;
+}
+
+.welcome-btn-secondary:active, .welcome-btn-primary:active, .welcome-btn-cta:active {
+  transform: translateY(0);
+}
+/* Contact Input Styles */
+.contact-underlined-input {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  padding: 0.5rem 0 !important;
+  font-size: 1rem !important;
+  outline: none !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.contact-underlined-input:focus {
+  border-bottom-color: #A3E635 !important;
+}
+
+.social-icon-btn {
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+  background: #A3E635;
+  color: #0a192f;
+  transform: scale(1.1);
+}
+.contact-back-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: #A3E635 !important;
+  color: #A3E635 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(163, 230, 53, 0.15);
+}
+
+.contact-back-btn:active {
+  transform: translateY(0);
+}
+/* Container to let the eye button position perfectly inside */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Make sure the input stretches but gives right-side padding for the icon */
+.password-input-wrapper .form-input {
+  width: 100%;
+  padding-right: 2.75rem !important;
+}
+
+/* Floating button alignment */
+.password-toggle-btn {
+  position: absolute;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #64748b; /* Slate gray subtle icon color */
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: #1e293b;
+}
+.ytp-settings-button,
+.ytp-button.ytp-settings-button,
+.ytp-chrome-top,
+.ytp-share-button,
+.ytp-youtube-button {
+  display: none !important;
+}
