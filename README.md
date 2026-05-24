@@ -205,11 +205,11 @@ Admin can track feedback insights:
 -> ⚙️ Settings
 <img width="1856" height="913" alt="image" src="https://github.com/user-attachments/assets/ee1cdc8e-7839-4fd1-a11c-b2f1fe3b950e" />
 
-    Students can update:
-    Name
-    Email
-    Phone
-    Password
+  Students can update:
+- Name
+- Email
+- Phone
+- Password
    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
