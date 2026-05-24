@@ -293,7 +293,7 @@ EDUVANTAA/
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  ## 🌟 System Highlights
+## 🌟 System Highlights
 
 * 🔐 **Role-based Authentication:** Distinct secure entry portals for both Admin and Student access levels.
 * 📊 **Real-time Analytics Dashboard:** Dynamic data visualization tracking student metrics and engagement.
@@ -304,7 +304,7 @@ EDUVANTAA/
 * 🎓 **Automated Certificate Generation:** Instant creation of credentials upon course completion.
 * 💬 **Built-in Communication System:** Integrated contact and inquiry desks for student support.
 
----
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🧠 Tech Stack
 
