@@ -281,7 +281,7 @@ EDUVANTAA/
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
- - > What This Project Demonstrates
+ ##- > What This Project Demonstrates
     * Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.
     * Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).
     * Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.
