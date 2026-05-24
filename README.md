@@ -293,20 +293,20 @@ EDUVANTAA/
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 🌟 System Highlights
+ 🌟 System Highlights
 
-* 🔐 **Role-based Authentication:** Distinct secure entry portals for both Admin and Student access levels.
-* 📊 **Real-time Analytics Dashboard:** Dynamic data visualization tracking student metrics and engagement.
-* 🎯 **Structured Learning Path System:** Programmatic layout of courses and progressive learning modules.
-* 📈 **Progress Tracking Engine:** Live monitoring of student completion rates across individual courses.
-* 📝 **Quiz-based Learning Validation:** Automated assessment checks to test student comprehension.
-* 📥 **Assignment Approval Workflow:** Seamless submission pipeline for student files and admin review.
-* 🎓 **Automated Certificate Generation:** Instant creation of credentials upon course completion.
-* 💬 **Built-in Communication System:** Integrated contact and inquiry desks for student support.
+* 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.
+* 📊 Real-time Analytics Dashboard: Dynamic data visualization tracking student metrics and engagement.
+* 🎯 Structured Learning Path System: Programmatic layout of courses and progressive learning modules.
+* 📈 Progress Tracking Engine: Live monitoring of student completion rates across individual courses.
+* 📝 Quiz-based Learning Validation: Automated assessment checks to test student comprehension.
+* 📥 Assignment Approval Workflow: Seamless submission pipeline for student files and admin review.
+* 🎓 Automated Certificate Generation: Instant creation of credentials upon course completion.
+* 💬 Built-in Communication System: Integrated contact and inquiry desks for student support.
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 🧠 Tech Stack
+🧠 Tech Stack
 
 * ⚛️ **React.js:** Component-driven user interface architecture for the frontend.
 * 🟢 **Node.js & Express.js:** Fast, minimalist backend web framework running RESTful API endpoints.
