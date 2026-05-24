@@ -16,13 +16,13 @@ The system is built to simulate a real-world EdTech platform with structured lea
 -> 📊 Dashboard Overview : 
 <img width="1650" height="887" alt="image" src="https://github.com/user-attachments/assets/d3688ba4-11bb-4085-b657-30ad239ca926" />
 
-      Admin can monitor complete platform activity:
-     - Total Students
-     - Total Courses
-     - Active Enrollments
-     - Pending Assignments
-     - Completed Courses
-     - Certificates Issued
+     Admin can monitor complete platform activity:
+- Total Students
+- Total Courses
+- Active Enrollments
+- Pending Assignments
+- Completed Courses
+- Certificates Issued
 
 -> 📚 Course Management:
 
@@ -96,11 +96,11 @@ Admin can track feedback insights:
 - > ⚙️ Settings:
    <img width="1687" height="897" alt="image" src="https://github.com/user-attachments/assets/b7c922e2-c3a2-4580-9803-d39fe6701cdd" />
 
-       Admin can:
-      - Update profile information
-      - Change name
-      - Change email
-      - Change password
+      Admin can:
+- Update profile information
+- Change name
+- Change email
+- Change password
 
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -127,23 +127,24 @@ Admin can track feedback insights:
 -> 🎓 Enrolled Courses:
 <img width="1850" height="890" alt="image" src="https://github.com/user-attachments/assets/b561e605-7840-4a23-9433-4fa671d05cfb" />
 
-      Each course contains:
-      -> 📖 Lessons
-         - Structured content for learning
-         - Includes text + resources
+    Each course contains:
 
-     -> 🎥 Video Learning
-        - Videos must be watched fully
-        - Skipping is restricted to ensure engagement
-        
-    -> 🧠 Quizzes
-        - Quizzes unlock progressively
-        - Must score correctly to proceed
+#### -> 📖 Lessons
+- Structured content for learning
+- Includes text + resources
 
-    -> 📝 Assignments
-       - Submit assignments per course
-       - Admin reviews and approves/rejects
-       - Resubmission allowed if rejected
+#### -> 🎥 Video Learning
+- Videos must be watched fully
+- Skipping is restricted to ensure engagement
+    
+#### -> 🧠 Quizzes
+- Quizzes unlock progressively
+- Must score correctly to proceed
+
+###  -> 📝 Assignments
+- Submit assignments per course
+- Admin reviews and approves/rejects
+- Resubmission allowed if rejected
 
 - > 📊 Progress System : 
        Learning progress is calculated as:
@@ -176,8 +177,8 @@ Admin can track feedback insights:
 - > 📥 Downloads:
   > <img width="1919" height="885" alt="image" src="https://github.com/user-attachments/assets/dd0ef918-7667-4274-b0ea-a112f93e2749" />
 
-       - Stores all downloaded notes
-       - Tracks student learning resources
+      - Stores all downloaded notes
+     - Tracks student learning resources
 
 -> 📢 Announcements
 <img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/58918bb5-6736-402c-8c00-184f97092b12" />
@@ -187,9 +188,7 @@ Admin can track feedback insights:
 -> 🎓 Certificates: 
 <img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/94e66ac2-7b96-43d6-bbb5-1c77c799403e" />
 <img width="757" height="460" alt="image" src="https://github.com/user-attachments/assets/5cadc2fa-7bb8-47b4-8a24-f043d29e74dc" />
-
-
-     - Stores all the generates certificates 
+- Stores all the generated certificates
 
 -> 💬 Feedback System:
 <img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/ec2a0c57-1510-4842-9e12-cc11e849d513" />
