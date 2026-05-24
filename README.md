@@ -50,7 +50,7 @@ Admin can track platform performance using graphs:
 
 -> 📝 Assignment Management:
 
-<img width="1869" height="887" alt="image" src="https://github.com/user-attachments/assets/74ac3511-6b38-4d52-b728-25de1947fd3e" />
+<img width="1869" height="887" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
 
 Admin can:
 - Create assignments for courses
