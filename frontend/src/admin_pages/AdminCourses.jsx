@@ -14,7 +14,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
 const AdminCourses = () => {
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   const [courses, setCourses] = useState([]);
   const [showForm, setShowForm] = useState(false);

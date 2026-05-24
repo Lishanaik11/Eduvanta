@@ -48,6 +48,8 @@ ChartJS.register(
 );
 
 export default function CourseAnalytics() {
+   
+  const backendUrl = import.meta.env.VITE_API_URL; 
   /* ====================================================================
       MOCK DATA LAYERS
      ==================================================================== */
@@ -66,7 +68,8 @@ export default function CourseAnalytics() {
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/course-analysis/analytics")
+      if (!backendUrl) return;
+    fetch(`${backendUrl}/api/course-analysis/analytics`)
       .then((res) => res.json())
       .then((data) => {
         console.log("Analytics Data:", data);

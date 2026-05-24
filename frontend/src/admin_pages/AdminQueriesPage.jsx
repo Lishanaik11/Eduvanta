@@ -25,7 +25,7 @@ const AdminQueriesPage = () => {
   const [loading, setLoading] = useState(true);
   const [replyText, setReplyText] = useState({});
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // ✅ FETCH ALL MESSAGES FROM BACKEND
   const fetchMessages = async () => {

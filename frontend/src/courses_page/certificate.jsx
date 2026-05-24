@@ -190,7 +190,7 @@ const Certificate = ({
         const parsedUser = JSON.parse(storedUser);
 
         await fetch(
-          `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/courses/certificate/generate`,
+          `${import.meta.env.VITE_API_URL}/api/courses/certificate/generate`,
           {
             method: 'POST',
             headers: {

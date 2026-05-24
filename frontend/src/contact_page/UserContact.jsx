@@ -19,7 +19,7 @@ const UserContact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    const backendUrl = import.meta.env.VITE_API_URL;
 
     try {
       const response = await fetch(`${backendUrl}/api/contact/submit`, {

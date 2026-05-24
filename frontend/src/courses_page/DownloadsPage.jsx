@@ -22,7 +22,7 @@ const DownloadsPage = () => {
   const [loading, setLoading] = useState(true);
 
   const backendUrl =
-    import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    import.meta.env.VITE_API_URL;
 
   /**
    * UUID SAFE VALIDATION

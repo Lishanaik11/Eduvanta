@@ -22,7 +22,7 @@ export default function StudentAnnouncementPage() {
   const [announcements, setAnnouncements] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // Fetch all system announcements broadcasted by Admin
   const fetchAnnouncements = async () => {

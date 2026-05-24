@@ -26,8 +26,8 @@ function App() {
         <Route path="/contact" element={<UserContact />} />
 
         {/*Courses*/}
-        <Route path="/courses" element={<CoursesPage />} />
-<Route path="/course-view/:courseId" element={<IndividualCourseView />} />
+        <Route path="/courses" element={ <ProtectedRoute><CoursesPage /></ProtectedRoute>} />
+<Route path="/course-view/:courseId" element={<ProtectedRoute> <IndividualCourseView /> </ProtectedRoute>} />
 
 
         {/* Both authentication paths load the unified LoginPage parent container */}

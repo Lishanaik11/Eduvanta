@@ -28,7 +28,7 @@ const IndividualCourseView = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const activePlayerInstanceRef = useRef(null);
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   /**
    * Smart Extractor Object to handle database identities safely.

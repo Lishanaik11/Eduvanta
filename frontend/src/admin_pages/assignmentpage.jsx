@@ -32,6 +32,7 @@ import FilterListRoundedIcon from "@mui/icons-material/FilterListRounded";
 import axios from "axios";
 
 export default function AssignmentPage() {
+    const backendUrl = import.meta.env.VITE_API_URL;
   const userId = localStorage.getItem("userId");
 
   /* ================= STATE ================= */
@@ -56,7 +57,7 @@ export default function AssignmentPage() {
   /* -------- COURSES (ADMIN SIDE) -------- */
   const fetchCourses = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/courses");
+      const res = await axios.get(`${backendUrl}/api/courses`);
 
       const formatted = (res.data.courses || []).map((c) => ({
         id: c.id,
@@ -76,7 +77,7 @@ export default function AssignmentPage() {
   const fetchSubmissions = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3000/api/assignments/admin/submissions"
+         `${backendUrl}/api/assignments/admin/submissions`
       );
 
       const formatted = (res.data.submissions || []).map((s) => ({
@@ -85,7 +86,7 @@ export default function AssignmentPage() {
         courseName: s.course_title,
         topic: s.title,
         fileUrl: s.submitted_url
-          ? `http://localhost:3000${s.submitted_url}`
+          ?`${backendUrl}${s.submitted_url}`
           : "#",
         status: s.status || "Pending",
       }));
@@ -117,7 +118,7 @@ export default function AssignmentPage() {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/assignments/admin/create",
+        `${backendUrl}/api/assignments/admin/create`,
         {
           title: course.topic,
           description: course.topic,
@@ -138,7 +139,7 @@ export default function AssignmentPage() {
 
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      await axios.patch("http://localhost:3000/api/assignments/review", {
+      await axios.patch( `${backendUrl}/api/assignments/review`, {
         submissionId: id,
         status: newStatus,
         feedback: newStatus === "Rejected" ? rejectionReason : null,
@@ -158,7 +159,9 @@ export default function AssignmentPage() {
   const handleDeleteSubmission = async (id) => {
     if (window.confirm("Are you sure you want to remove this submission record?")) {
       try {
-        await axios.delete(`http://localhost:3000/api/assignments/submission/${id}`);
+       await axios.delete(
+  `${backendUrl}/api/assignments/submission/${id}`
+);
         
         setSubmittedAssignments((prev) => prev.filter((item) => item.id !== id));
         alert("Submission entry deleted successfully.");

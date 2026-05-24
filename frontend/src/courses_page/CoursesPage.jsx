@@ -41,7 +41,7 @@ const CoursesPage = ({ viewMode }) => {
   const [notesLoading, setNotesLoading] = useState(false);
   const [coursesLoading, setCoursesLoading] = useState(true);
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // ✅ FETCH COURSES FROM DB
   useEffect(() => {
@@ -319,7 +319,7 @@ const CoursesPage = ({ viewMode }) => {
                       }
                     }}
                   >
-                    <Box>
+                    <Box sx={{ mt: 'auto' }}>
                       <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', mb: '0.75rem' }}>
                         <Typography sx={{ fontWeight: '800', color: '#1e293b', fontSize: '1.1rem', lineHeight: '1.4' }}>
                           {note.title}
@@ -468,7 +468,7 @@ const CoursesPage = ({ viewMode }) => {
 
       {/* Courses Grid Pipeline System */}
       {coursesLoading ? (
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ justifyContent: 'flex-start' }}>
           {[1, 2, 3].map((n) => (
             <Grid item xs={12} sm={6} md={4} key={n}>
               <Skeleton variant="rounded" height={260} sx={{ borderRadius: '20px' }} />
@@ -514,9 +514,9 @@ const CoursesPage = ({ viewMode }) => {
                     borderRadius: "20px",
                     border: "1px solid",
                     borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
+                    display: "flex",                 
+flexDirection: "column",
+height: "100%",
                     minHeight: "280px",
                     position: 'relative',
                     overflow: 'hidden',
@@ -541,7 +541,12 @@ const CoursesPage = ({ viewMode }) => {
                     background: isEnrolled && !isNotesMode ? 'linear-gradient(90deg, #3B592D, #689f4c)' : 'linear-gradient(90deg, #e2e8f0, #cbd5e1)'
                   }} />
 
-                  <Box sx={{ display: "flex", flexDirection: "column", gap: '0.75rem', mb: '1.5rem' }}>
+               <Box sx={{
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.5rem",
+  flex: 1
+}}>
                     {/* Status badge row layout */}
                     {isEnrolled && (
                       <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
@@ -582,7 +587,7 @@ const CoursesPage = ({ viewMode }) => {
 </Typography>
                   </Box>
 
-                  <Box sx={{ mt: 'auto' }}>
+                  <Box>
                     <Button
                       fullWidth
                       variant={isEnrolled && !isNotesMode ? "outlined" : "contained"}

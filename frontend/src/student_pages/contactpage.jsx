@@ -44,7 +44,7 @@ const ContactPage = () => {
     );
 
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/contact/messages`
+      `${import.meta.env.VITE_API_URL}/api/contact/messages`
     );
 
     const data = await response.json();
@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
     );
 
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/auth/contact/send`,
+      `${import.meta.env.VITE_API_URL}/api/auth/contact/send`,
       {
         method: 'POST',
         headers: {

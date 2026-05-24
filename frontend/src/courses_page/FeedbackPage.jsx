@@ -22,7 +22,7 @@ const FeedbackPage = ({ userId }) => {
     feedbackText: ''
   });
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // Fetch enrolled courses for the dropdown options array matrix maps
   useEffect(() => {

@@ -32,7 +32,7 @@ export default function AnnouncementPage() {
   const [editTitle, setEditTitle] = useState('');
   const [editContent, setEditContent] = useState('');
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   // Fetch all system announcements
   const fetchAnnouncements = async () => {

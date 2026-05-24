@@ -18,7 +18,7 @@ const Assigmentpage = ({ userId }) => {
   const [inputLinks, setInputLinks] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const backendUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+  const backendUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     if (!userId) {
