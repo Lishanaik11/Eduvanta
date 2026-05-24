@@ -174,11 +174,10 @@ export default function AssignmentPage() {
 
   /* --- REJECTION INTERCEPT ACTIONS --- */
   const handleOpenRejectionModal = (submission) => {
-    setSelectedSubmission(submission);
-    setRejectionReason("");
-    rejectionModalOpen(true);
-    setRejectionModalOpen(true);
-  };
+  setSelectedSubmission(submission);
+  setRejectionReason("");
+  setRejectionModalOpen(true);
+};
 
   const handleConfirmRejection = () => {
     if (!rejectionReason.trim()) {

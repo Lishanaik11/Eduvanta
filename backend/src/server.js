@@ -17,17 +17,20 @@ import adminOverviewRoutes from './routes/adminoverview.routes.js';
 
 import path from 'path';
 
-// Load environment variables immediately
+
+
+// Global Middlewares
 dotenv.config();
 
 const app = express();
 
-// Global Middlewares
 app.use(cors({
-  origin: 'http://localhost:5173', // Explicitly allow your Vite frontend
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
-app.use(express.json()); 
+
+app.use(express.json());
+
 
 app.use('/uploads', express.static('uploads'));
 
