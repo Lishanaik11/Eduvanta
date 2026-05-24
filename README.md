@@ -25,38 +25,41 @@ The system is built to simulate a real-world EdTech platform with structured lea
      - Certificates Issued
 
 -> 📚 Course Management:
+
 <img width="1861" height="896" alt="image" src="https://github.com/user-attachments/assets/3fdf3f2f-cdb4-46ec-b0b1-d472009e2211" />
 
-      Admin can:
-    - Create new courses
-    - Add lessons inside courses
-    - Upload video content for lessons
-    - Create course notes
-    - Manage quizzes for each lesson
-    - Structure full learning modules
+Admin can:
+- Create new courses
+- Add lessons inside courses
+- Upload video content for lessons
+- Create course notes
+- Manage quizzes for each lesson
+- Structure full learning modules
 
-    ->📈 Course Analytics
-    <img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
+-> 📈 Course Analytics
 
-        Admin can track platform performance using graphs:
-      - Total Courses
-      - Average Completion Rate
-      - Total Enrollments
-      - Enrollment Trends (Graph)
-      - Category Performance (Graph)
-      - Top Performing Courses
+<img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
 
-     ->📝 Assignment Management:
-     <img width="1869" height="887" alt="image" src="https://github.com/user-attachments/assets/7a5c3511-6b38-4d52-b728-25de1947fd3e" />
+Admin can track platform performance using graphs:
+- Total Courses
+- Average Completion Rate
+- Total Enrollments
+- Enrollment Trends (Graph)
+- Category Performance (Graph)
+- Top Performing Courses
 
-             Admin can:
-           - Create assignments for courses
-           - Review student submissions
-           - Approve assignments
-           -Reject assignments
-           - Allow resubmission if rejected
+-> 📝 Assignment Management:
 
-      ->📒 Notes Management:
+<img width="1869" height="887" alt="image" src="https://github.com/user-attachments/assets/74ac3511-6b38-4d52-b728-25de1947fd3e" />
+
+Admin can:
+- Create assignments for courses
+- Review student submissions
+- Approve assignments
+- Reject assignments
+- Allow resubmission if rejected
+
+   ->📒 Notes Management:
       <img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" />
 
            Admin can manage course notes:
@@ -67,34 +70,33 @@ The system is built to simulate a real-world EdTech platform with structured lea
           - Organize notes by course and lesson
 
      
-      -> 📢 Announcements:
-      <img width="1811" height="885" alt="image" src="https://github.com/user-attachments/assets/94cd519c-5484-421c-b41d-5f639c9e19fe" />
+   -> 📢 Announcements:
 
-             Admin can:
-           - Create announcements visible to all users
-           - Post updates, notices, and important alerts
+<img width="1811" height="885" alt="image" src="https://github.com/user-attachments/assets/94cd519c-5484-421c-b41d-5f639c9e19fe" />
 
+Admin can:
+- Create announcements visible to all users
+- Post updates, notices, and important alerts
 
-      -> 💬 Queries Management:
-      <img width="1919" height="889" alt="image" src="https://github.com/user-attachments/assets/378b08be-b520-4f68-ba63-ad516af7ef99" />
-            Admin can:
-         - View all user queries
-         - Reply to student questions and issues          
-         - Maintain communication history
+-> 💬 Queries Management:
+<img width="1919" height="889" alt="image" src="https://github.com/user-attachments/assets/378b08be-b520-4f68-ba63-ad516af7ef99" />
 
-      -> 😊 Learner Satisfaction:
-      <img width="1919" height="890" alt="image" src="https://github.com/user-attachments/assets/e908c05c-e651-4b51-8b13-c3674cad90bd" />
+Admin can:
+- View all user queries
+- Reply to student questions and issues          
+- Maintain communication history
 
-          Admin can track feedback insights:
-         - Average Rating
-         - Positive Feedback
-         - Negative Feedback
-         - Total Reviews
-         - Satisfaction Trend (Graph view)
+-> 😊 Learner Satisfaction:
+<img width="1919" height="890" alt="image" src="https://github.com/user-attachments/assets/e908c05c-e651-4b51-8b13-c3674cad90bd" />
+Admin can track feedback insights:
+- Average Rating
+- Positive Feedback
+- Negative Feedback
+- Total Reviews
+- Satisfaction Trend (Graph view)
 
-   - > ⚙️ Settings:
-     <img width="1687" height="897" alt="image" src="https://github.com/user-attachments/assets/b7c922e2-c3a2-4580-9803-d39fe6701cdd" />
-
+- > ⚙️ Settings:
+   <img width="1687" height="897" alt="image" src="https://github.com/user-attachments/assets/b7c922e2-c3a2-4580-9803-d39fe6701cdd" />
        Admin can:
       - Update profile information
       - Change name
