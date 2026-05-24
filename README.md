@@ -212,26 +212,26 @@ Admin can track feedback insights:
     Password
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     🏗️ System Highlights
-🔐 Role-based authentication (Admin / Student)
-📊 Real-time analytics dashboard
-🎯 Structured learning path system
-📈 Progress tracking engine
-🧠 Quiz-based learning validation
-📝 Assignment approval workflow
-🎓 Automated certificate generation
-💬 Built-in communication system
+- 🔐 Role-based authentication (Admin / Student)
+- 📊 Real-time analytics dashboard
+- 🎯 Structured learning path system
+- 📈 Progress tracking engine
+- 🧠 Quiz-based learning validation
+- 📝 Assignment approval workflow
+- 🎓 Automated certificate generation
+- 💬 Built-in communication system
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 🧠 Tech Stack
-React.js (Frontend)
-Node.js + Express.js (Backend)
-PostgreSQL (Database)
-JWT Authentication
-Chart.js / Recharts (Analytics)
-REST APIs
+- React.js (Frontend)
+- Node.js + Express.js (Backend)
+- PostgreSQL (Database)
+- JWT Authentication
+- Chart.js / Recharts (Analytics)
+- REST APIs
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 📌 Project Goal
-To simulate a real-world EdTech LMS platform that includes:
-Learning flow control
-Admin governance system
-Student progress tracking
-Data-driven analytics
+- To simulate a real-world EdTech LMS platform that includes:
+- Learning flow control
+- Admin governance system
+- Student progress tracking
+- Data-driven analytics
