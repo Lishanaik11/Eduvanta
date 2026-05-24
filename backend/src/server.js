@@ -70,11 +70,16 @@ app.use(
   adminOverviewRoutes
 );
 
-// Server Port Listener Configuration
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`=========================================`);
-  console.log(`🚀 Server listening on: http://localhost:${PORT}`);
-  console.log(`=========================================`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`=========================================`);
+    console.log(`🚀 Server listening on: http://localhost:${PORT}`);
+    console.log(`=========================================`);
+  });
+}
+
+
+
+export default app;
