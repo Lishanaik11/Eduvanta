@@ -11,7 +11,7 @@ import Sidebar from './Sidebar.jsx';
 import AdminCourses from './AdminCourses.jsx';
 import CourseAnalytics from './CourseAnalytics';
 import AssignmentPage from './assignmentpage.jsx';
-import LearnerSatisfaction from './Learnersatisfaction.jsx';
+import LearnerSatisfaction from './LearnerSatisfaction.jsx';
 import AnnouncementPage from './AnnouncementPage.jsx';
 import NotesPage from './notesPage.jsx';
 import AdminQueriesPage from './AdminQueriesPage.jsx';
