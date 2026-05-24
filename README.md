@@ -226,60 +226,59 @@ Admin can track feedback insights:
    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 ## Project Structure
 
+```text
 EDUVANTAA/
 ├── backend/
 │   ├── api/
-│   │   └── index.js                 # Server entry point for Vercel serverless deployment
+│   │   └── index.js                 # Server entry point
 │   ├── src/
 │   │   ├── config/
-│   │   │   └── db.js                # Database connection pooling (MySQL/Oracle)
+│   │   │   └── db.js                # Database connection pooling
 │   │   ├── controllers/             # Request handlers & Business Logic
 │   │   │   ├── admin.controller.js
 │   │   │   ├── assignment.controller.js
 │   │   │   ├── auth.controller.js
-│   │   │   ├── courseanalysis.controller.js
-│   │   │   └── [other-controllers].js
-│   │   ├── middlewares/             # Request interceptors (Auth, File Uploads)
+│   │   │   └── courseanalysis.controller.js
+│   │   ├── middlewares/             # Request interceptors
 │   │   │   ├── assignmentUpload.middleware.js
 │   │   │   ├── upload.middleware.js
 │   │   │   └── verifyToken.js       # JWT Authorization Guard
 │   │   └── routes/                  # Express Routing definitions
 │   │       ├── admin.routes.js
 │   │       ├── auth.routes.js
-│   │       ├── course.routes.js
-│   │       └── [other-routes].js
-│   ├── uploads/                     # Local storage directories for media
+│   │       └── course.routes.js
+│   ├── uploads/                     # Local media storage
 │   │   ├── assignments/
 │   │   └── notes/
-│   └── server.js                    # Local Express server initialization
+│   └── server.js                    # Local server initialization
 │
 ├── frontend/
 │   ├── public/                      # Static assets
 │   ├── src/
-│   │   ├── admin_pages/             # Admin Management Portal UIs
+│   │   ├── admin_pages/             # Admin Management Portal
 │   │   │   ├── AdminDashboard.jsx
 │   │   │   ├── CourseAnalytics.jsx
 │   │   │   └── LearnerSatisfaction.jsx
-│   │   ├── components/              # Global UI & Access Control Layouts
+│   │   ├── components/              # Global UI & Access Control
 │   │   │   ├── AdminProtectedRoute.jsx
 │   │   │   └── ProtectedRoute.jsx
 │   │   ├── contact_page/            # Public Contact interfaces
-│   │   ├── courses_page/            # Core Course & Module viewing components
-│   │   ├── login_page/              # Authentication UIs (Login, Signup, Welcome)
-│   │   ├── student_pages/           # Learner Experience Portal UIs
+│   │   ├── courses_page/            # Course viewing components
+│   │   ├── login_page/              # Authentication (Login, Signup)
+│   │   ├── student_pages/           # Learner Dashboard
 │   │   │   └── StudentDashboard.jsx
 │   │   ├── App.jsx                  # Central React Client-Side Router
 │   │   ├── main.jsx                 # Client bootstrapping script
 │   │   ├── index.css                # Global Tailwind CSS configurations
 │   │   └── tailwind.config.js       # Tailwind style presets
 │   ├── package.json
-│   └── vite.config.js               # Vite build tool configuration
+│   └── vite.config.js               # Vite build tool config
 │
 ├── .gitignore
 ├── package.json
+
                     
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 - > What This Project Demonstrates
