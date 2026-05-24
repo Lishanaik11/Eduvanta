@@ -225,7 +225,72 @@ Admin can track feedback insights:
 - Password
    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   
+
+
+## Project Structure
+
+EDUVANTAA/
+├── backend/
+│   ├── api/
+│   │   └── index.js                 # Server entry point for Vercel serverless deployment
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js                # Database connection pooling (MySQL/Oracle)
+│   │   ├── controllers/             # Request handlers & Business Logic
+│   │   │   ├── admin.controller.js
+│   │   │   ├── assignment.controller.js
+│   │   │   ├── auth.controller.js
+│   │   │   ├── courseanalysis.controller.js
+│   │   │   └── [other-controllers].js
+│   │   ├── middlewares/             # Request interceptors (Auth, File Uploads)
+│   │   │   ├── assignmentUpload.middleware.js
+│   │   │   ├── upload.middleware.js
+│   │   │   └── verifyToken.js       # JWT Authorization Guard
+│   │   └── routes/                  # Express Routing definitions
+│   │       ├── admin.routes.js
+│   │       ├── auth.routes.js
+│   │       ├── course.routes.js
+│   │       └── [other-routes].js
+│   ├── uploads/                     # Local storage directories for media
+│   │   ├── assignments/
+│   │   └── notes/
+│   └── server.js                    # Local Express server initialization
+│
+├── frontend/
+│   ├── public/                      # Static assets
+│   ├── src/
+│   │   ├── admin_pages/             # Admin Management Portal UIs
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── CourseAnalytics.jsx
+│   │   │   └── LearnerSatisfaction.jsx
+│   │   ├── components/              # Global UI & Access Control Layouts
+│   │   │   ├── AdminProtectedRoute.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   ├── contact_page/            # Public Contact interfaces
+│   │   ├── courses_page/            # Core Course & Module viewing components
+│   │   ├── login_page/              # Authentication UIs (Login, Signup, Welcome)
+│   │   ├── student_pages/           # Learner Experience Portal UIs
+│   │   │   └── StudentDashboard.jsx
+│   │   ├── App.jsx                  # Central React Client-Side Router
+│   │   ├── main.jsx                 # Client bootstrapping script
+│   │   ├── index.css                # Global Tailwind CSS configurations
+│   │   └── tailwind.config.js       # Tailwind style presets
+│   ├── package.json
+│   └── vite.config.js               # Vite build tool configuration
+│
+├── .gitignore
+├── package.json
+                    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+- > What This Project Demonstrates
+    * Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.
+ 
+    * Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).
+
+    * Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     🏗️ System Highlights
 - 🔐 Role-based authentication (Admin / Student)
 - 📊 Real-time analytics dashboard
