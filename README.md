@@ -293,7 +293,7 @@ EDUVANTAA/
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- 🌟 System Highlights
+  System Highlights
 
 * 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.
 * 📊 Real-time Analytics Dashboard: Dynamic data visualization tracking student metrics and engagement.
@@ -306,21 +306,21 @@ EDUVANTAA/
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-🧠 Tech Stack
+ Tech Stack
 
-* ⚛️ **React.js:** Component-driven user interface architecture for the frontend.
-* 🟢 **Node.js & Express.js:** Fast, minimalist backend web framework running RESTful API endpoints.
-* 🗄️ **Relational Database:** Robust database instance management handling complex data relations.
-* 🔑 **JWT Authentication:** Secure stateless session handling via JSON Web Tokens.
-* 📉 **Chart.js / Recharts:** Powerful rendering libraries used for complex data-driven analytics.
-* 🌐 **REST APIs:** Structured HTTP request mapping for predictable client-server interaction.
+- React.js: Component-driven user interface architecture for the frontend.
+- Node.js & Express.js: Fast, minimalist backend web framework running RESTful API endpoints.
+- Relational Database: Robust database instance management handling complex data relations.
+- JWT Authentication:Secure stateless session handling via JSON Web Tokens.
+- Chart.js / Recharts: Powerful rendering libraries used for complex data-driven analytics.
+- REST APIs:** Structured HTTP request mapping for predictable client-server interaction.
 
----
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 📌 Project Goal
+📌 Project Goal
 
 The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
-* 🎛️ **Learning Flow Control:** Restricting course navigation based on user validation.
-* 🛡️ **Admin Governance System:** Comprehensive control panels for instructors to oversee materials and submissions.
-* ⏱️ **Student Progress Tracking:** Clear insights for users to check their educational milestones.
-* 📊 **Data-driven Analytics:** Deep performance mapping using dynamic chart components.
+- Learning Flow Control: Restricting course navigation based on user validation.
+- Admin Governance System: Comprehensive control panels for instructors to oversee materials and submissions.
+- Student Progress Tracking: Clear insights for users to check their educational milestones.
+- Data-driven Analytics:Deep performance mapping using dynamic chart components.
