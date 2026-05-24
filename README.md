@@ -54,7 +54,7 @@ Admin can:
 - Create assignments for courses
 - Review student submissions
 - Approve assignments
-- Reject assignments (if want to reject the assignment, they have to gice reason of rejection)
+- Reject assignments (if want to reject the assignment, they have to give reason of rejection)
   <img width="956" height="504" alt="image" src="https://github.com/user-attachments/assets/fa4717bf-b653-4552-9935-9e909273d1b3" />
 
 - Allow resubmission if rejected
