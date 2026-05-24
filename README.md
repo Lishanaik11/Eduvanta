@@ -35,16 +35,16 @@ The system is built to simulate a real-world EdTech platform with structured lea
     - Manage quizzes for each lesson
     - Structure full learning modules
 
-    ->📈 Course Analytics:
-    <img width="1897" height="869" alt="image" src="https://github.com/user-attachments/assets/83d1317c-eea2-445e-a710-5fd9827ecd3e" />
+    ->📈 Course Analytics
+    <img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
 
-          Admin can analyze platform performance using graphs:
-        - Total Courses overview
-        - Average Completion Rate
-        - Total Enrollments tracking
-        - Enrollment Trends (Graph view)
-        - Category Performance analysis (Graph view)
-        - Top Performing Courses list
+        Admin can track platform performance using graphs:
+      - Total Courses
+      - Average Completion Rate
+      - Total Enrollments
+      - Enrollment Trends (Graph)
+      - Category Performance (Graph)
+      - Top Performing Courses
 
      ->📝 Assignment Management:
      <img width="1869" height="887" alt="image" src="https://github.com/user-attachments/assets/7a5c3511-6b38-4d52-b728-25de1947fd3e" />
