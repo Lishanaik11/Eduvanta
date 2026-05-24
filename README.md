@@ -54,7 +54,9 @@ Admin can:
 - Create assignments for courses
 - Review student submissions
 - Approve assignments
-- Reject assignments
+- Reject assignments (if want to reject the assignment, they have to gice reason of rejection)
+  <img width="956" height="504" alt="image" src="https://github.com/user-attachments/assets/fa4717bf-b653-4552-9935-9e909273d1b3" />
+
 - Allow resubmission if rejected
 
    ->📒 Notes Management:
@@ -160,6 +162,18 @@ Admin can track feedback insights:
     - Assignment approved by admin
     - Students can download certificates
  <img width="842" height="907" alt="image" src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" />
+ <img width="967" height="876" alt="image" src="https://github.com/user-attachments/assets/a2294e51-7d26-4c56-b378-f71b09b96a7e" />
+<img width="778" height="740" alt="image" src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" />
+
+-> Cannot get the certificate until the admin approves the assignment 
+<img width="907" height="590" alt="image" src="https://github.com/user-attachments/assets/8d611439-6881-413e-8c30-2a8e4dc17404" />
+
+-> And if the assignment get Rejected by the admin , It will came back for resubmission 
+<img width="812" height="255" alt="image" src="https://github.com/user-attachments/assets/a241503b-20d7-450d-af0f-1113a771e44b" />
+
+->Once all asignments are approved by the admin the course completion certificate will be generated 
+<img width="811" height="483" alt="image" src="https://github.com/user-attachments/assets/aa952cca-84c5-4a5e-b040-0ec7b47fa32f" />
+
 
 
 -> 📝 Assignments Section:
