@@ -293,28 +293,34 @@ EDUVANTAA/
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    🏗️ System Highlights
-- 🔐 Role-based authentication (Admin / Student)
-- 📊 Real-time analytics dashboard
-- 🎯 Structured learning path system
-- 📈 Progress tracking engine
-- 🧠 Quiz-based learning validation
-- 📝 Assignment approval workflow
-- 🎓 Automated certificate generation
-- 💬 Built-in communication system
+  ## 🌟 System Highlights
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🧠 Tech Stack
-- React.js (Frontend)
-- Node.js + Express.js (Backend)
-- PostgreSQL (Database)
-- JWT Authentication
-- Chart.js / Recharts (Analytics)
-- REST APIs
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-📌 Project Goal
-- To simulate a real-world EdTech LMS platform that includes:
-- Learning flow control
-- Admin governance system
-- Student progress tracking
-- Data-driven analytics
+* 🔐 **Role-based Authentication:** Distinct secure entry portals for both Admin and Student access levels.
+* 📊 **Real-time Analytics Dashboard:** Dynamic data visualization tracking student metrics and engagement.
+* 🎯 **Structured Learning Path System:** Programmatic layout of courses and progressive learning modules.
+* 📈 **Progress Tracking Engine:** Live monitoring of student completion rates across individual courses.
+* 📝 **Quiz-based Learning Validation:** Automated assessment checks to test student comprehension.
+* 📥 **Assignment Approval Workflow:** Seamless submission pipeline for student files and admin review.
+* 🎓 **Automated Certificate Generation:** Instant creation of credentials upon course completion.
+* 💬 **Built-in Communication System:** Integrated contact and inquiry desks for student support.
+
+---
+
+## 🧠 Tech Stack
+
+* ⚛️ **React.js:** Component-driven user interface architecture for the frontend.
+* 🟢 **Node.js & Express.js:** Fast, minimalist backend web framework running RESTful API endpoints.
+* 🗄️ **Relational Database:** Robust database instance management handling complex data relations.
+* 🔑 **JWT Authentication:** Secure stateless session handling via JSON Web Tokens.
+* 📉 **Chart.js / Recharts:** Powerful rendering libraries used for complex data-driven analytics.
+* 🌐 **REST APIs:** Structured HTTP request mapping for predictable client-server interaction.
+
+---
+
+## 📌 Project Goal
+
+The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
+* **Learning Flow Control:** Restricting course navigation based on user validation.
+* **Admin Governance System:** Comprehensive control panels for instructors to oversee materials and submissions.
+* **Student Progress Tracking:** Clear insights for users to check their educational milestones.
+* **Data-driven Analytics:** Deep performance mapping using dynamic chart components.
