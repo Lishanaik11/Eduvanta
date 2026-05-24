@@ -145,22 +145,20 @@ Admin can track feedback insights:
        - Admin reviews and approves/rejects
        - Resubmission allowed if rejected
 
-**- > 📊 Progress System : 
-Learning progress is calculated as:
-📝 Assignments → 45%
-📖 Lesson Content → 15%
-🎥 Video Completion → 15%
-🧠 Quizzes → 25%
-
-➡️ Total Progress = 100%**
+- > 📊 Progress System : 
+       Learning progress is calculated as:
+     - 📝 Assignments → 45%
+     - 📖 Lesson Content → 15%
+     - 🎥 Video Completion → 15%
+     - 🧠 Quizzes → 25%
+➡️ Total Progress = 100%
 
 -> 🎓 Certificates:
     - Generated only after:
     - 100% course completion
     - Assignment approved by admin
     - Students can download certificates
-
-    <img width="842" height="907" alt="image" src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" />
+ <img width="842" height="907" alt="image" src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" />
 
 
 -> 📝 Assignments Section:
