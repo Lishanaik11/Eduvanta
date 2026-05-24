@@ -304,7 +304,7 @@ EDUVANTAA/
 * 🎓 **Automated Certificate Generation:** Instant creation of credentials upon course completion.
 * 💬 **Built-in Communication System:** Integrated contact and inquiry desks for student support.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ## 🧠 Tech Stack
 
@@ -320,7 +320,7 @@ EDUVANTAA/
 ## 📌 Project Goal
 
 The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
-* **Learning Flow Control:** Restricting course navigation based on user validation.
-* **Admin Governance System:** Comprehensive control panels for instructors to oversee materials and submissions.
-* **Student Progress Tracking:** Clear insights for users to check their educational milestones.
-* **Data-driven Analytics:** Deep performance mapping using dynamic chart components.
+* 🎛️ **Learning Flow Control:** Restricting course navigation based on user validation.
+* 🛡️ **Admin Governance System:** Comprehensive control panels for instructors to oversee materials and submissions.
+* ⏱️ **Student Progress Tracking:** Clear insights for users to check their educational milestones.
+* 📊 **Data-driven Analytics:** Deep performance mapping using dynamic chart components.
