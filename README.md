@@ -210,11 +210,11 @@ Admin can:
 
 <img width="907" height="590" alt="image" src="https://github.com/user-attachments/assets/8d611439-6881-413e-8c30-2a8e4dc17404" />
 
-# And if the assignment get Rejected by the admin , It will came back for resubmission 
+**And if the assignment get Rejected by the admin , It will came back for resubmission**
 
 <img width="812" height="255" alt="image" src="https://github.com/user-attachments/assets/a241503b-20d7-450d-af0f-1113a771e44b" />
 
-# Once all asignments are approved by the admin the course completion certificate will be generated 
+**Once all asignments are approved by the admin the course completion certificate will be generated**
 
 <img width="811" height="483" alt="image" src="https://github.com/user-attachments/assets/aa952cca-84c5-4a5e-b040-0ec7b47fa32f" />
 
