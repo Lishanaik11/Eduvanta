@@ -18,8 +18,8 @@ The system is built to simulate a real-world EdTech platform with structured lea
 # 📊 Dashboard Overview : 
 <img width="1650" height="887" alt="image" src="https://github.com/user-attachments/assets/d3688ba4-11bb-4085-b657-30ad239ca926" />
 
-     Admin can monitor complete platform activity:
-- Total Students
+ **Admin can monitor complete platform activity**:
+ - Total Students
 - Total Courses
 - Active Enrollments
 - Pending Assignments
@@ -44,7 +44,7 @@ Admin can:
 
 <img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
 
-Admin can track platform performance using graphs:
+**Admin can track platform performance using graph**s:
 - Total Courses
 - Average Completion Rate
 - Total Enrollments
@@ -72,12 +72,12 @@ Admin can track platform performance using graphs:
       
   <img src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" width="90%" style="border-radius:10px;" />
 
- **Admin can manage course notes**:
-          - Upload new notes for courses
-          - View existing uploaded notes
-          - Update notes if required
-          - Delete existing notes permanently
-          - Organize notes by course and lesson
+**Admin can manage course notes**:
+- Upload new notes for courses
+- View existing uploaded notes
+- Update notes if required
+- Delete existing notes permanently
+- Organize notes by course and lesson
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      
 # 📢 Announcements:
@@ -125,31 +125,39 @@ Admin can track platform performance using graphs:
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
- 👨‍🎓 Student Panel Features
+# **👨‍🎓 Student Panel Features**
 
-- >🏠 Dashboard:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# 🏠 Dashboard:
+
 <img width="1680" height="899" alt="image" src="https://github.com/user-attachments/assets/68f0109a-a0d1-4e65-bffe-3cfad107654a" />
 
-      Students can view:
-      - Enrolled Courses
-      - Pending Assignments
-      - Learning Progress Summary
+**Students can view:**
+- Enrolled Courses
+- Pending Assignments
+- Learning Progress Summary
+      
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# 📚 Courses:
 
--> 📚 Courses:
 <img width="1901" height="896" alt="image" src="https://github.com/user-attachments/assets/bd4df84f-262c-43ff-a9f3-6b9f754f0200" />
 
+ **Students can :** 
    - Browse all available courses
    - Enroll in courses
    - Open and start learning
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# 🎓 Enrolled Courses:
 
--> 🎓 Enrolled Courses:
 <img width="1850" height="890" alt="image" src="https://github.com/user-attachments/assets/b561e605-7840-4a23-9433-4fa671d05cfb" />
 
-    Each course contains:
+# Each course contains:
 
-#### -> 📖 Lessons
+#  **📖 Lessons :**
+
 - Structured content for learning
 - Includes text + resources
 
