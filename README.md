@@ -356,14 +356,14 @@ EDUVANTAA/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ** What This Project Demonstrates**
-   **Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.**
-   **Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).**
-    **Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.**
+#  What This Project Demonstrates
+- **Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.**
+-**Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).**
+-**Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.**
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  # **System Highlights**
+  # System Highlights
   
 * 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.*
 * 📊 Real-time Analytics Dashboard: Dynamic data visualization tracking student metrics and engagement.
@@ -376,7 +376,7 @@ EDUVANTAA/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ** Tech Stack**
+# Tech Stack
 
 - React.js: Component-driven user interface architecture for the frontend.
 - Node.js & Express.js: Fast, minimalist backend web framework running RESTful API endpoints.
@@ -387,7 +387,7 @@ EDUVANTAA/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# **📌 Project Goal**
+# 📌 Project Goal
 
 The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
 - Learning Flow Control: Restricting course navigation based on user validation.
