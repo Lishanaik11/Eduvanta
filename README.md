@@ -24,6 +24,7 @@ The system is built to simulate a real-world EdTech platform with structured lea
 - Completed Courses
 - Certificates Issued
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -> 📚 Course Management:
 
 <img width="1861" height="896" alt="image" src="https://github.com/user-attachments/assets/3fdf3f2f-cdb4-46ec-b0b1-d472009e2211" />
@@ -36,6 +37,7 @@ Admin can:
 - Manage quizzes for each lesson
 - Structure full learning modules
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -> 📈 Course Analytics
 
 <img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
@@ -48,6 +50,8 @@ Admin can track platform performance using graphs:
 - Category Performance (Graph)
 - Top Performing Courses
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -> 📝 Assignment Management:
 <img width="1911" height="902" alt="image" src="https://github.com/user-attachments/assets/6c0a3d22-9b8d-495e-9857-4d281e045e99" />
 Admin can:
@@ -58,7 +62,7 @@ Admin can:
   <img width="956" height="504" alt="image" src="https://github.com/user-attachments/assets/fa4717bf-b653-4552-9935-9e909273d1b3" />
 
 - Allow resubmission if rejected
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    ->📒 Notes Management:
       <img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" />
 
