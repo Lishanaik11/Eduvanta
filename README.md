@@ -1,4 +1,4 @@
-📚 Eduvanta – Smart E-Learning Platform
+# **Eduvanta – Smart E-Learning Platform**
 A full-stack role-based e-learning system with Admin & Student dashboards, course management, assignments, analytics, and certificate generation.
 
 🚀 Overview : 
