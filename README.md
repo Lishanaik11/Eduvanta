@@ -200,13 +200,13 @@ Admin can:
 # ➡️ Total Progress = 100%
 
  # 🎓 Certificates:
-    - Generated only after:
-    - 100% course completion
-    - Assignment approved by admin
-    - Students can download certificates
+- Generated only after:
+- 100% course completion
+- Assignment approved by admin
+- Students can download certificates
 
 
-# Cannot get the certificate until the admin approves the assignment 
+**Cannot get the certificate until the admin approves the assignment**
 
 <img width="907" height="590" alt="image" src="https://github.com/user-attachments/assets/8d611439-6881-413e-8c30-2a8e4dc17404" />
 
