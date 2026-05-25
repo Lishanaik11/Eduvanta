@@ -154,6 +154,9 @@ Admin can:
 
 <img width="1850" height="890" alt="image" src="https://github.com/user-attachments/assets/b561e605-7840-4a23-9433-4fa671d05cfb" />
 
+**Students can :**
+- see all their enrolled courses here 
+
 # Each course contains:
 
 #  **Lessons :**
