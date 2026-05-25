@@ -225,29 +225,100 @@ Admin can track feedback insights:
 - Password
    
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   
-    🏗️ System Highlights
-- 🔐 Role-based authentication (Admin / Student)
-- 📊 Real-time analytics dashboard
-- 🎯 Structured learning path system
-- 📈 Progress tracking engine
-- 🧠 Quiz-based learning validation
-- 📝 Assignment approval workflow
-- 🎓 Automated certificate generation
-- 💬 Built-in communication system
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-🧠 Tech Stack
-- React.js (Frontend)
-- Node.js + Express.js (Backend)
-- PostgreSQL (Database)
-- JWT Authentication
-- Chart.js / Recharts (Analytics)
-- REST APIs
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Project Structure
+
+```text
+EDUVANTAA/
+├── backend/
+│   ├── api/
+│   │   └── index.js                 # Server entry point
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── db.js                # Database connection pooling
+│   │   ├── controllers/             # Request handlers & Business Logic
+│   │   │   ├── admin.controller.js
+│   │   │   ├── assignment.controller.js
+│   │   │   ├── auth.controller.js
+│   │   │   └── courseanalysis.controller.js
+│   │   ├── middlewares/             # Request interceptors
+│   │   │   ├── assignmentUpload.middleware.js
+│   │   │   ├── upload.middleware.js
+│   │   │   └── verifyToken.js       # JWT Authorization Guard
+│   │   └── routes/                  # Express Routing definitions
+│   │       ├── admin.routes.js
+│   │       ├── auth.routes.js
+│   │       └── course.routes.js
+│   ├── uploads/                     # Local media storage
+│   │   ├── assignments/
+│   │   └── notes/
+│   └── server.js                    # Local server initialization
+│
+├── frontend/
+│   ├── public/                      # Static assets
+│   ├── src/
+│   │   ├── admin_pages/             # Admin Management Portal
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── CourseAnalytics.jsx
+│   │   │   └── LearnerSatisfaction.jsx
+│   │   ├── components/              # Global UI & Access Control
+│   │   │   ├── AdminProtectedRoute.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   ├── contact_page/            # Public Contact interfaces
+│   │   ├── courses_page/            # Course viewing components
+│   │   ├── login_page/              # Authentication (Login, Signup)
+│   │   ├── student_pages/           # Learner Dashboard
+│   │   │   └── StudentDashboard.jsx
+│   │   ├── App.jsx                  # Central React Client-Side Router
+│   │   ├── main.jsx                 # Client bootstrapping script
+│   │   ├── index.css                # Global Tailwind CSS configurations
+│   │   └── tailwind.config.js       # Tailwind style presets
+│   ├── package.json
+│   └── vite.config.js               # Vite build tool config
+│
+├── .gitignore
+├── package.json
+
+...
+```
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+ - > What This Project Demonstrates
+    * Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.
+    * Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).
+    * Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  System Highlights
+
+* 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.
+* 📊 Real-time Analytics Dashboard: Dynamic data visualization tracking student metrics and engagement.
+* 🎯 Structured Learning Path System: Programmatic layout of courses and progressive learning modules.
+* 📈 Progress Tracking Engine: Live monitoring of student completion rates across individual courses.
+* 📝 Quiz-based Learning Validation: Automated assessment checks to test student comprehension.
+* 📥 Assignment Approval Workflow: Seamless submission pipeline for student files and admin review.
+* 🎓 Automated Certificate Generation: Instant creation of credentials upon course completion.
+* 💬 Built-in Communication System: Integrated contact and inquiry desks for student support.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Tech Stack
+
+- React.js: Component-driven user interface architecture for the frontend.
+- Node.js & Express.js: Fast, minimalist backend web framework running RESTful API endpoints.
+- Relational Database: Robust database instance management handling complex data relations.
+- JWT Authentication:Secure stateless session handling via JSON Web Tokens.
+- Chart.js / Recharts: Powerful rendering libraries used for complex data-driven analytics.
+- REST APIs:** Structured HTTP request mapping for predictable client-server interaction.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 📌 Project Goal
-- To simulate a real-world EdTech LMS platform that includes:
-- Learning flow control
-- Admin governance system
-- Student progress tracking
-- Data-driven analytics
+
+The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
+- Learning Flow Control: Restricting course navigation based on user validation.
+- Admin Governance System: Comprehensive control panels for instructors to oversee materials and submissions.
+- Student Progress Tracking: Clear insights for users to check their educational milestones.
+- Data-driven Analytics:Deep performance mapping using dynamic chart components.
