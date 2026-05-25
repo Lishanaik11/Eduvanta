@@ -56,7 +56,8 @@ Admin can track platform performance using graphs:
 
 # 📝 Assignment Management:
 <img width="1911" height="902" alt="image" src="https://github.com/user-attachments/assets/6c0a3d22-9b8d-495e-9857-4d281e045e99" />
-Admin can:
+
+**Admin can**:
 - Create assignments for courses
 - Review student submissions
 - Approve assignments
@@ -67,9 +68,8 @@ Admin can:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 📒 Notes Management:
-      <p align="center">
+      
   <img src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" width="90%" style="border-radius:10px;" />
-</p>
 
            Admin can manage course notes:
           - Upload new notes for courses
