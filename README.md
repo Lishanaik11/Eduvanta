@@ -4,12 +4,12 @@ A full-stack role-based e-learning system with Admin & Student dashboards, cours
 🚀 Overview : 
 Eduvanta is a modern Learning Management System (LMS) designed to manage online education efficiently.
 
-It provides two main panels:
+**It provides two main panels:**
 👨‍💼 Admin Panel → Manages platform, courses, users, analytics, and learning flow
 👨‍🎓 Student Panel → Learns courses, completes assignments, tracks progress, and earns certificates
 
 The system is built to simulate a real-world EdTech platform with structured learning paths and performance tracking.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 👨‍💼 **Admin Panel Features** :
 
