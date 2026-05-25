@@ -161,9 +161,12 @@ Admin can track feedback insights:
     - 100% course completion
     - Assignment approved by admin
     - Students can download certificates
- <img width="842" height="907" alt="image" src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" />
- <img width="967" height="876" alt="image" src="https://github.com/user-attachments/assets/a2294e51-7d26-4c56-b378-f71b09b96a7e" />
-<img width="778" height="740" alt="image" src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" />
+🎓 Certificates
+<img src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" width="100%" /> <img src="https://github.com/user-attachments/assets/a2294e51-7d26-4c56-b378-f71b09b96a7e" width="100%" /> <img src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" width="100%" />
+Rules:
+Requires 100% completion
+Admin must approve assignments
+Certificate unlocks after approval
 
 -> Cannot get the certificate until the admin approves the assignment 
 <img width="907" height="590" alt="image" src="https://github.com/user-attachments/assets/8d611439-6881-413e-8c30-2a8e4dc17404" />
