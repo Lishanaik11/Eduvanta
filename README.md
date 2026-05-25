@@ -15,7 +15,7 @@ The system is built to simulate a real-world EdTech platform with structured lea
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# -> 📊 Dashboard Overview : 
+# 📊 Dashboard Overview : 
 <img width="1650" height="887" alt="image" src="https://github.com/user-attachments/assets/d3688ba4-11bb-4085-b657-30ad239ca926" />
 
      Admin can monitor complete platform activity:
@@ -27,7 +27,7 @@ The system is built to simulate a real-world EdTech platform with structured lea
 - Certificates Issued
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--> 📚 Course Management:
+#  📚 Course Management:
 
 <img width="1861" height="896" alt="image" src="https://github.com/user-attachments/assets/3fdf3f2f-cdb4-46ec-b0b1-d472009e2211" />
 
@@ -40,7 +40,7 @@ Admin can:
 - Structure full learning modules
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--> 📈 Course Analytics
+# 📈 Course Analytics
 
 <img width="1895" height="912" alt="image" src="https://github.com/user-attachments/assets/74b7118d-2b49-43d2-92a4-3a3e96c3dd88" />
 
@@ -54,7 +54,7 @@ Admin can track platform performance using graphs:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--> 📝 Assignment Management:
+# 📝 Assignment Management:
 <img width="1911" height="902" alt="image" src="https://github.com/user-attachments/assets/6c0a3d22-9b8d-495e-9857-4d281e045e99" />
 Admin can:
 - Create assignments for courses
@@ -65,8 +65,11 @@ Admin can:
 
 - Allow resubmission if rejected
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   ->📒 Notes Management:
-      <img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" />
+
+# 📒 Notes Management:
+      <p align="center">
+  <img src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" width="90%" style="border-radius:10px;" />
+</p>
 
            Admin can manage course notes:
           - Upload new notes for courses
@@ -74,7 +77,7 @@ Admin can:
           - Update notes if required
           - Delete existing notes permanently
           - Organize notes by course and lesson
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      
    -> 📢 Announcements:
 
