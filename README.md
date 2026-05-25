@@ -156,18 +156,28 @@ Admin can:
 
 # Each course contains:
 
-#  **📖 Lessons :**
+#  **Lessons :**
 
 - Structured content for learning
 - Includes text + resources
+- Videos + quizzes
 
-#### -> 🎥 Video Learning
+<img src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" width="100%" /> 
+
+# **Video Learning**
 - Videos must be watched fully
 - Skipping is restricted to ensure engagement
+
+   <img src="https://github.com/user-attachments/assets/a2294e51-7d26-4c56-b378-f71b09b96a7e" width="100%" />
     
-#### -> 🧠 Quizzes
+# **Quizzes** 
 - Quizzes unlock progressively
 - Must score correctly to proceed
+- The progress will not increase untill users gives correct answers to all the questions
+
+<img src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" width="100%" />
+
+
 
 ###  -> 📝 Assignments
 - Submit assignments per course
@@ -188,7 +198,7 @@ Admin can:
     - Assignment approved by admin
     - Students can download certificates
 🎓 Certificates
-<img src="https://github.com/user-attachments/assets/5e537bc6-d52a-4c84-b5f5-e321a6f2c554" width="100%" /> <img src="https://github.com/user-attachments/assets/a2294e51-7d26-4c56-b378-f71b09b96a7e" width="100%" /> <img src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" width="100%" />
+  <img src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" width="100%" />
 Rules:
 Requires 100% completion
 Admin must approve assignments
