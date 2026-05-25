@@ -184,86 +184,113 @@ Admin can:
 - Admin reviews and approves/rejects
 - Resubmission allowed if rejected
 
-- > 📊 Progress System : 
-       Learning progress is calculated as:
-     - 📝 Assignments → 45%
-     - 📖 Lesson Content → 15%
-     - 🎥 Video Completion → 15%
-     - 🧠 Quizzes → 25%
-➡️ Total Progress = 100%
+# **📊 Progress System :  **
+      
+   **Learning progress is calculated as:**
+    - 📝 Assignments → 45%
+    - 📖 Lesson Content → 15%
+    - 🎥 Video Completion → 15%
+    - 🧠 Quizzes → 25%
+# ➡️ Total Progress = 100%
 
--> 🎓 Certificates:
+ # 🎓 Certificates:
     - Generated only after:
     - 100% course completion
     - Assignment approved by admin
     - Students can download certificates
-🎓 Certificates
-  <img src="https://github.com/user-attachments/assets/940c1c8d-7c0c-418d-abbb-aea05b099d84" width="100%" />
-Rules:
-Requires 100% completion
-Admin must approve assignments
-Certificate unlocks after approval
 
--> Cannot get the certificate until the admin approves the assignment 
+
+# Cannot get the certificate until the admin approves the assignment 
+
 <img width="907" height="590" alt="image" src="https://github.com/user-attachments/assets/8d611439-6881-413e-8c30-2a8e4dc17404" />
 
--> And if the assignment get Rejected by the admin , It will came back for resubmission 
+# And if the assignment get Rejected by the admin , It will came back for resubmission 
+
 <img width="812" height="255" alt="image" src="https://github.com/user-attachments/assets/a241503b-20d7-450d-af0f-1113a771e44b" />
 
-->Once all asignments are approved by the admin the course completion certificate will be generated 
+# Once all asignments are approved by the admin the course completion certificate will be generated 
+
 <img width="811" height="483" alt="image" src="https://github.com/user-attachments/assets/aa952cca-84c5-4a5e-b040-0ec7b47fa32f" />
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
--> 📝 Assignments Section:
+# **📝 Assignments Section:**
+
 <img width="1885" height="894" alt="image" src="https://github.com/user-attachments/assets/f54988b5-c12d-4b05-b51d-7a541fc2db83" />
 
    - View all active assignments
    - Never miss pending tasks
 
--> 📒 Notes
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# ** 📒 Notes **
+
 <img width="1919" height="893" alt="image" src="https://github.com/user-attachments/assets/d5a0307f-1368-41b0-baff-d6f69ae53b89" />
 
    - Access course-related notes
    - Download study materials
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
-- > 📥 Downloads:
-  > <img width="1919" height="885" alt="image" src="https://github.com/user-attachments/assets/dd0ef918-7667-4274-b0ea-a112f93e2749" />
+ # **📥 Downloads:**
+  
+  <img width="1919" height="885" alt="image" src="https://github.com/user-attachments/assets/dd0ef918-7667-4274-b0ea-a112f93e2749" />
 
       - Stores all downloaded notes
      - Tracks student learning resources
 
--> 📢 Announcements
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# ** 📢 Announcements **
+
 <img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/58918bb5-6736-402c-8c00-184f97092b12" />
+     
       - View all admin announcements
       - also binks when new announcements arrive 
 
--> 🎓 Certificates: 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# ** 🎓 Certificates: **
+
 <img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/94e66ac2-7b96-43d6-bbb5-1c77c799403e" />
+
 <img width="757" height="460" alt="image" src="https://github.com/user-attachments/assets/5cadc2fa-7bb8-47b4-8a24-f043d29e74dc" />
+
 - Stores all the generated certificates
 
--> 💬 Feedback System:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **💬 Feedback System:**
+
 <img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/ec2a0c57-1510-4842-9e12-cc11e849d513" />
+
 - Rate courses (stars & feedback)
 - Share learning experience
 
--> 📩 Contact & Support
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **📩 Contact & Support**
+
 <img width="1667" height="894" alt="image" src="https://github.com/user-attachments/assets/91bf1604-ac3e-49e4-bca6-1005f91f054f" />
- - Send queries to admin
+ 
+- Send queries to admin
 -  View admin replies in:
 - Support Messages & Replies Section
 
--> ⚙️ Settings
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# **⚙️ Settings : **
+
 <img width="1856" height="913" alt="image" src="https://github.com/user-attachments/assets/ee1cdc8e-7839-4fd1-a11c-b2f1fe3b950e" />
 
-  Students can update:
+**Students can update:**
 - Name
 - Email
 - Phone
 - Password
    
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Structure
 
@@ -321,18 +348,18 @@ EDUVANTAA/
 ...
 ```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- - > What This Project Demonstrates
-    * Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.
-    * Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).
-    * Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.
+# ** What This Project Demonstrates**
+   **Production-Ready MVC Architecture: Clean, enterprise-standard separation of routing logic, middleware interceptors, and controller data operations on the backend.**
+   **Role-Based Access Control (RBAC): Bulletproof client-side and server-side route protection utilizing custom React layout wrappers (AdminProtectedRoute) and Express JWT verification middlewares (verifyToken.js).**
+    **Advanced UI/UX Implementation: A polished, modern responsive UI built entirely on Tailwind CSS, moving away from basic structural grids into high-fidelity data dashboards.**
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  System Highlights
-
-* 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.
+  # **System Highlights**
+  
+* 🔐 Role-based Authentication: Distinct secure entry portals for both Admin and Student access levels.*
 * 📊 Real-time Analytics Dashboard: Dynamic data visualization tracking student metrics and engagement.
 * 🎯 Structured Learning Path System: Programmatic layout of courses and progressive learning modules.
 * 📈 Progress Tracking Engine: Live monitoring of student completion rates across individual courses.
@@ -341,20 +368,20 @@ EDUVANTAA/
 * 🎓 Automated Certificate Generation: Instant creation of credentials upon course completion.
 * 💬 Built-in Communication System: Integrated contact and inquiry desks for student support.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- Tech Stack
+# ** Tech Stack**
 
 - React.js: Component-driven user interface architecture for the frontend.
 - Node.js & Express.js: Fast, minimalist backend web framework running RESTful API endpoints.
 - Relational Database: Robust database instance management handling complex data relations.
 - JWT Authentication:Secure stateless session handling via JSON Web Tokens.
 - Chart.js / Recharts: Powerful rendering libraries used for complex data-driven analytics.
-- REST APIs:** Structured HTTP request mapping for predictable client-server interaction.
+- REST APIs: Structured HTTP request mapping for predictable client-server interaction.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-📌 Project Goal
+# **📌 Project Goal**
 
 The primary objective of **EDUVANTAA** is to engineer a real-world EdTech LMS ecosystem that implements:
 - Learning Flow Control: Restricting course navigation based on user validation.
