@@ -62,6 +62,7 @@ Admin can track platform performance using graphs:
 - Review student submissions
 - Approve assignments
 - Reject assignments (if want to reject the assignment, they have to give reason of rejection)
+
   <img width="956" height="504" alt="image" src="https://github.com/user-attachments/assets/fa4717bf-b653-4552-9935-9e909273d1b3" />
 
 - Allow resubmission if rejected
@@ -71,7 +72,7 @@ Admin can track platform performance using graphs:
       
   <img src="https://github.com/user-attachments/assets/62ccb296-b336-4c08-a44d-588cbd4c9b73" width="90%" style="border-radius:10px;" />
 
-           Admin can manage course notes:
+ **Admin can manage course notes**:
           - Upload new notes for courses
           - View existing uploaded notes
           - Update notes if required
@@ -79,35 +80,43 @@ Admin can track platform performance using graphs:
           - Organize notes by course and lesson
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      
-   -> 📢 Announcements:
+# 📢 Announcements:
 
 <img width="1811" height="885" alt="image" src="https://github.com/user-attachments/assets/94cd519c-5484-421c-b41d-5f639c9e19fe" />
 
-Admin can:
+**Admin can**:
 - Create announcements visible to all users
 - Post updates, notices, and important alerts
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
--> 💬 Queries Management:
+ # 💬 Queries Management:
+
 <img width="1919" height="889" alt="image" src="https://github.com/user-attachments/assets/378b08be-b520-4f68-ba63-ad516af7ef99" />
 
-Admin can:
+**Admin can**:
 - View all user queries
 - Reply to student questions and issues          
 - Maintain communication history
 
--> 😊 Learner Satisfaction:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 😊 Learner Satisfaction:
+
 <img width="1919" height="890" alt="image" src="https://github.com/user-attachments/assets/e908c05c-e651-4b51-8b13-c3674cad90bd" />
-Admin can track feedback insights:
+
+**Admin can track feedback insights**:
 - Average Rating
 - Positive Feedback
 - Negative Feedback
 - Total Reviews
 - Satisfaction Trend (Graph view)
 
-- > ⚙️ Settings:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ # ⚙️ Settings:
+  
    <img width="1687" height="897" alt="image" src="https://github.com/user-attachments/assets/b7c922e2-c3a2-4580-9803-d39fe6701cdd" />
 
-      Admin can:
+**Admin can**:
 - Update profile information
 - Change name
 - Change email
