@@ -182,18 +182,21 @@ Admin can:
 
 
 
-###  -> 📝 Assignments
+# **📝 Assignments**
 - Submit assignments per course
 - Admin reviews and approves/rejects
 - Resubmission allowed if rejected
 
-# **📊 Progress System :  **
+<img width="919" height="532" alt="image" src="https://github.com/user-attachments/assets/5aa893ea-9d55-4ef2-813d-ea1ec02d235a" />
+
+
+#  **📊 Progress System :  **
       
-   **Learning progress is calculated as:**
-    - 📝 Assignments → 45%
-    - 📖 Lesson Content → 15%
-    - 🎥 Video Completion → 15%
-    - 🧠 Quizzes → 25%
+**Learning progress is calculated as:**
+- 📝 Assignments → 45%
+- 📖 Lesson Content → 15%
+- 🎥 Video Completion → 15%
+- 🧠 Quizzes → 25%
 # ➡️ Total Progress = 100%
 
  # 🎓 Certificates:
