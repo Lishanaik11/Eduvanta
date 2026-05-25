@@ -11,7 +11,7 @@ It provides two main panels:
 The system is built to simulate a real-world EdTech platform with structured learning paths and performance tracking.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-👨‍💼 Admin Panel Features :
+# 👨‍💼 **Admin Panel Features** :
 
 -> 📊 Dashboard Overview : 
 <img width="1650" height="887" alt="image" src="https://github.com/user-attachments/assets/d3688ba4-11bb-4085-b657-30ad239ca926" />
