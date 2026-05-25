@@ -221,43 +221,43 @@ Admin can:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# **📝 Assignments Section:**
+# 📝 Assignments Section:
 
 <img width="1885" height="894" alt="image" src="https://github.com/user-attachments/assets/f54988b5-c12d-4b05-b51d-7a541fc2db83" />
 
-   - View all active assignments
-   - Never miss pending tasks
+- View all active assignments
+- Never miss pending tasks
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ** 📒 Notes **
+# 📒 Notes
 
 <img width="1919" height="893" alt="image" src="https://github.com/user-attachments/assets/d5a0307f-1368-41b0-baff-d6f69ae53b89" />
 
-   - Access course-related notes
-   - Download study materials
+- Access course-related notes
+- Download study materials
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    
- # **📥 Downloads:**
+ # 📥 Downloads:
   
   <img width="1919" height="885" alt="image" src="https://github.com/user-attachments/assets/dd0ef918-7667-4274-b0ea-a112f93e2749" />
 
-      - Stores all downloaded notes
-     - Tracks student learning resources
+- Stores all downloaded notes
+- Tracks student learning resources
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ** 📢 Announcements **
+# 📢 Announcements
 
 <img width="1919" height="895" alt="image" src="https://github.com/user-attachments/assets/58918bb5-6736-402c-8c00-184f97092b12" />
      
-      - View all admin announcements
-      - also binks when new announcements arrive 
+- View all admin announcements
+- also binks when new announcements arrive 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ** 🎓 Certificates: **
+# 🎓 Certificates: 
 
 <img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/94e66ac2-7b96-43d6-bbb5-1c77c799403e" />
 
@@ -267,7 +267,7 @@ Admin can:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# **💬 Feedback System:**
+# 💬 Feedback System:
 
 <img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/ec2a0c57-1510-4842-9e12-cc11e849d513" />
 
@@ -276,7 +276,7 @@ Admin can:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# **📩 Contact & Support**
+# 📩 Contact & Support
 
 <img width="1667" height="894" alt="image" src="https://github.com/user-attachments/assets/91bf1604-ac3e-49e4-bca6-1005f91f054f" />
  
@@ -286,7 +286,7 @@ Admin can:
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# **⚙️ Settings : **
+# ⚙️ Settings : 
 
 <img width="1856" height="913" alt="image" src="https://github.com/user-attachments/assets/ee1cdc8e-7839-4fd1-a11c-b2f1fe3b950e" />
 
