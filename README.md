@@ -294,6 +294,8 @@ Admin can:
 
 <img width="1919" height="907" alt="image" src="https://github.com/user-attachments/assets/94e66ac2-7b96-43d6-bbb5-1c77c799403e" />
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <img width="757" height="460" alt="image" src="https://github.com/user-attachments/assets/5cadc2fa-7bb8-47b4-8a24-f043d29e74dc" />
 
 - Stores all the generated certificates
