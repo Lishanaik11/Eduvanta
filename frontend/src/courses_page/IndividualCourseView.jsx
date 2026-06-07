@@ -190,57 +190,57 @@ const IndividualCourseView = () => {
     }
   };
 
-  // NEW: Certificate Generation handler triggered on completion
-const handleDownloadCertificate = async () => {
-  try {
-    setIsGeneratingCertificate(true);
+  // Certificate Generation handler triggered on completion
+  const handleDownloadCertificate = async () => {
+    try {
+      setIsGeneratingCertificate(true);
 
-    const response = await fetch(
-      `${backendUrl}/api/courses/certificate/generate`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: userIdContext.asString,
-          courseId: course.id,
-          courseTitle: course.title,
-          studentName: localStorage.getItem("name") || "Student",
-        }),
+      const response = await fetch(
+        `${backendUrl}/api/courses/certificate/generate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId: userIdContext.asString,
+            courseId: course.id,
+            courseTitle: course.title,
+            studentName: localStorage.getItem("name") || "Student",
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Certificate generation failed");
       }
-    );
 
-    const data = await response.json();
+      const certificateData = JSON.stringify(data.certificate, null, 2);
+      const blob = new Blob([certificateData], { type: "application/json" });
 
-    if (!response.ok) {
-      throw new Error(data.message || "Certificate generation failed");
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = `${course.title.replace(/\s+/g, "_")}_certificate.json`;
+
+      document.body.appendChild(link);
+      link.click();
+
+      link.remove();
+      window.URL.revokeObjectURL(url);
+
+      alert("🎉 Certificate downloaded successfully!");
+    } catch (err) {
+      console.error("Certificate error:", err);
+      alert(err.message || "Failed to generate certificate.");
+    } finally {
+      setIsGeneratingCertificate(false);
     }
+  };
 
-    // ✅ FIX: download NOT blob
-    const certificateData = JSON.stringify(data.certificate, null, 2);
-    const blob = new Blob([certificateData], { type: "application/json" });
-
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.download = `${course.title.replace(/\s+/g, "_")}_certificate.json`;
-
-    document.body.appendChild(link);
-    link.click();
-
-    link.remove();
-    window.URL.revokeObjectURL(url);
-
-    alert("🎉 Certificate downloaded successfully!");
-  } catch (err) {
-    console.error("Certificate error:", err);
-    alert(err.message || "Failed to generate certificate.");
-  } finally {
-    setIsGeneratingCertificate(false);
-  }
-};
   // File Upload Logic directly embedded inside the course pipeline framework
   const handleAssignmentDirectUpload = async (e, assignmentId) => {
     const file = e.target.files[0];
@@ -338,7 +338,7 @@ const handleDownloadCertificate = async () => {
   };
 
   const verifyQuizAnswersBatch = (lessonTarget) => {
-     setQuizErrors({});
+    setQuizErrors({});
     const lessonKey = String(lessonTarget.id);
     const quizSet = lessonTarget.quiz || [];
     let allClear = true;
@@ -361,7 +361,7 @@ const handleDownloadCertificate = async () => {
     }
   };
 
-  // FIXED: Calculations modified so that assignments only grant percentage points when "Approved"
+  // Calculations modified so that assignments only grant percentage points when "Approved"
   const calculateFrontendProgressValue = () => {
     if (lessons.length === 0) return courseProgress;
     
@@ -389,7 +389,7 @@ const handleDownloadCertificate = async () => {
     return Math.min(Math.round(totalScorePoints), 100);
   };
 
-  // NEW HELPER FUNCTION: Check if all criteria are completed except admin task approval
+  // Check if all criteria are completed except admin task approval
   const checkIsPendingApprovalOnly = () => {
     if (lessons.length === 0) return false;
 
@@ -423,38 +423,64 @@ const handleDownloadCertificate = async () => {
 
   if (!course) {
     return (
-      <div style={{ textAlign: 'center', padding: '5rem', color: '#64748b' }}>
+      <div style={{ textAlign: 'center', padding: '5rem 1rem', color: '#64748b' }}>
         <h3>No Course Context Transferred</h3>
         <button onClick={() => navigate(-1)} style={{ marginTop: '1rem', padding: '0.5rem 1rem' }}>Go Back</button>
       </div>
     );
   }
 
-  
-
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', color: '#1e293b', padding: '3rem 2rem', fontFamily: "'Poppins', sans-serif", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="course-view-container" style={{ minHeight: '100vh', background: '#f8fafc', color: '#1e293b', padding: '3rem 2rem', fontFamily: "'Poppins', sans-serif", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       
+      {/* Native Micro Responsive Media Queries block */}
+      <style>{`
+        .course-view-container { width: 100%; box-sizing: border-box; }
+        .fluid-card-shell { width: 100%; max-width: 950px; box-sizing: border-box; }
+        .header-progress-split { display: flex; justify-content: space-between; align-items: center; }
+        .lesson-header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 1rem; }
+        .assignment-row-split { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+        .assignment-bottom-actions { display: flex; justify-content: flex-end; align-items: center; gap: 1rem; }
+        .lesson-meta-badges { display: flex; gap: 1rem; margin-top: 0.4rem; font-size: 0.8rem; color: #94a3b8; }
+        .certificate-panel { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        
+        @media (max-width: 768px) {
+          .course-view-container { padding: 1.5rem 1rem !important; }
+          .fluid-card-shell { padding: 1.5rem !important; margin-bottom: 1.5rem !important; }
+          h1 { font-size: 1.85rem !important; }
+          .header-progress-split { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+          .lesson-header-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+          .lesson-header-row > span { align-self: flex-start; }
+          .lesson-meta-badges { flex-direction: column; gap: 0.3rem; }
+          .assignment-row-split { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+          .assignment-bottom-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 0.75rem; }
+          .assignment-bottom-actions > button, .assignment-bottom-actions > label { width: 100% !important; text-align: center; justify-content: center; box-sizing: border-box; }
+          .certificate-panel { flex-direction: column; align-items: stretch; gap: 1.25rem; }
+          .certificate-panel button { max-width: 100% !important; width: 100% !important; }
+          .lesson-inside-body { padding: 1.25rem !important; }
+        }
+      `}</style>
+
       {/* BACK NAVIGATION BAR */}
-      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '2.5rem' }}>
+      <div className="fluid-card-shell" style={{ marginBottom: '2.5rem' }}>
         <button onClick={() => navigate(-1)} style={{ background: '#ffffff', border: '1px solid #e2e8f0', color: '#475569', padding: '0.65rem 1.5rem', borderRadius: '12px', cursor: 'pointer', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
           <span>←</span> Back to System Hub
         </button>
       </div>
 
       {/* DYNAMIC PROGRESS HEADLINE CARD CONTAINER */}
-      <div style={{ width: '100%', maxWidth: '950px', background: '#ffffff', padding: '3.5rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(15,23,42,0.02)', marginBottom: '3rem' }}>
+      <div className="fluid-card-shell" style={{ background: '#ffffff', padding: '3.5rem', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(15,23,42,0.02)', marginBottom: '3rem' }}>
         <span style={{ fontSize: '0.8rem', background: '#eef6f0', color: '#3B592D', padding: '0.4rem 1rem', borderRadius: '50px', fontWeight: '700', textTransform: 'uppercase' }}>
           {course.category || 'Engineering'} Track
         </span>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', marginTop: '1.25rem', color: '#0f172a', letterSpacing: '-0.5px' }}>{course.title}</h1>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', marginTop: '1.25rem', color: '#0f172a', letterSpacing: '-0.5px', lineHeight: '1.25' }}>{course.title}</h1>
         <p style={{ color: '#64748b', fontSize: '1.05rem', marginTop: '1rem', lineHeight: '1.65' }}>{course.desc || course.description}</p>
 
         {/* RE-CALCULATED PROGRESS LEGEND BAR */}
         <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '2rem', marginTop: '2rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
-            <span style={{ fontWeight: '700', fontSize: '0.95rem', color: '#475569' }}>Academic Milestones (Content 15% | Video 25% | Quiz 15% | Task 45%)</span>
-            <span style={{ fontWeight: '800', fontSize: '1.1rem', color: '#3B592D' }}>{currentDisplayProgress}% Complete</span>
+          <div className="header-progress-split" style={{ marginBottom: '0.6rem' }}>
+            <span style={{ fontWeight: '700', fontSize: '0.95rem', color: '#475569', lineHeight: '1.4' }}>Academic Milestones (Content 15% | Video 25% | Quiz 15% | Task 45%)</span>
+            <span style={{ fontWeight: '800', fontSize: '1.1rem', color: '#3B592D', whiteSpace: 'nowrap' }}>{currentDisplayProgress}% Complete</span>
           </div>
           <div style={{ width: '100%', height: '12px', background: '#e2e8f0', borderRadius: '50px', overflow: 'hidden' }}>
             <div style={{ width: `${currentDisplayProgress}%`, height: '100%', background: 'linear-gradient(90deg, #3B592D 0%, #527c3f 100%)', borderRadius: '50px', transition: 'width 0.4s ease' }} />
@@ -463,17 +489,15 @@ const handleDownloadCertificate = async () => {
 
         {/* CONDITION 1: SHOW DOWNLOAD PANEL ONLY IF PROGRESS IS TRULY 100% */}
         {currentDisplayProgress === 100 && (
-          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', border: '1px solid #bbf7d0', borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem', animation: 'fadeIn 0.5s ease' ,  flexWrap: 'wrap' }}>
-            <div style={{ minWidth: '250px', flex: 1}}>
+          <div className="certificate-panel" style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', border: '1px solid #bbf7d0', borderRadius: '16px' }}>
+            <div style={{ minWidth: '250px', flex: 1 }}>
               <h3 style={{ margin: 0, color: '#14532d', fontWeight: '800', fontSize: '1.3rem' }}>Congratulations! You've Completed the Course</h3>
-              <p style={{ margin: '0.25rem 0 0 0', color: '#166534', fontSize: '0.95rem' }}>Your academic achievements are saved. You can now download your credential validation certificate.</p>
+              <p style={{ margin: '0.25rem 0 0 0', color: '#166534', fontSize: '0.95rem', lineHeight: '1.4' }}>Your academic achievements are saved. You can now download your credential validation certificate.</p>
             </div>
             <button 
               onClick={handleDownloadCertificate}
               disabled={isGeneratingCertificate}
-              style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', whiteSpace: 'nowrap' ,width: '100%', maxWidth: '220px' }}
-              onMouseEnter={(e) => e.target.style.background = '#2c4322'}
-              onMouseLeave={(e) => e.target.style.background = '#3B592D'}
+              style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', whiteSpace: 'nowrap', width: '100%', maxWidth: '220px' }}
             >
               {isGeneratingCertificate ? "Generating PDF..." : "Claim Certificate 🏆"}
             </button>
@@ -482,7 +506,7 @@ const handleDownloadCertificate = async () => {
 
         {/* CONDITION 2: SHOW WAITING NOTICE IF REQUISITES ARE MET BUT SUBMISSIONS ARE UNAPPROVED */}
         {currentDisplayProgress < 100 && isPendingApprovalOnly && (
-          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)', border: '1px solid #fde68a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '0.5rem', animation: 'fadeIn 0.5s ease' }}>
+          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)', border: '1px solid #fde68a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <h3 style={{ margin: 0, color: '#92400e', fontWeight: '800', fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               ⏳ Certificate Status: Pending Approval
             </h3>
@@ -494,7 +518,7 @@ const handleDownloadCertificate = async () => {
       </div>
 
       {/* CORE ROADMAP COURSE ACORDION SUB-UNITS */}
-      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '3rem' }}>
+      <div className="fluid-card-shell" style={{ marginBottom: '3rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: '#0f172a' }}>Lessons Curriculum</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {lessons.map((lesson) => {
@@ -509,68 +533,35 @@ const handleDownloadCertificate = async () => {
 
             return (
               <div key={lessonKey} style={{ background: '#ffffff', border: isExpanded ? '2px solid #3B592D' : '1px solid #e2e8f0', borderRadius: '16px', overflow: 'hidden' }}>
-                <div onClick={() => setExpandedLessonId(isExpanded ? null : lesson.id)} style={{ padding: '1.5rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }}>
-                  <div>
-                    <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: '700' }}>{lesson.title}</h4>
-                    <div style={{ display: 'flex', gap: '1rem', marginTop: '0.4rem', fontSize: '0.8rem', color: '#94a3b8' }}>
-                      <span style={{ color: status.content_read ? '#3B592D' : '#94a3b8' }}>📖 Read ({status.content_read ? '15%' : '0%'})</span>
-                      <span style={{ color: status.video_watched ? '#3B592D' : '#94a3b8' }}>📺 Video ({status.video_watched ? '25%' : '0%'})</span>
-                      <span style={{ color: status.quiz_completed ? '#3B592D' : '#94a3b8' }}>📝 Quiz ({status.quiz_completed ? '15%' : '0%'})</span>
+                <div onClick={() => setExpandedLessonId(isExpanded ? null : lesson.id)} style={{ padding: '1.5rem 2rem', cursor: 'pointer', display: 'flex' }}>
+                  <div className="lesson-header-row">
+                    <div>
+                      <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: '700', lineHeight: '1.3' }}>{lesson.title}</h4>
+                      <div className="lesson-meta-badges">
+                        <span style={{ color: status.content_read ? '#3B592D' : '#94a3b8', fontWeight: status.content_read ? '600' : '400' }}>📖 Read ({status.content_read ? '15%' : '0%'})</span>
+                        <span style={{ color: status.video_watched ? '#3B592D' : '#94a3b8', fontWeight: status.video_watched ? '600' : '400' }}>📺 Video ({status.video_watched ? '25%' : '0%'})</span>
+                        <span style={{ color: status.quiz_completed ? '#3B592D' : '#94a3b8', fontWeight: status.quiz_completed ? '600' : '400' }}>📝 Quiz ({status.quiz_completed ? '15%' : '0%'})</span>
+                      </div>
                     </div>
+                    <span style={{ fontWeight: '700', fontSize: '0.85rem', background: '#f1f5f9', padding: '0.4rem 0.8rem', borderRadius: '6px', whiteSpace: 'nowrap' }}>{unitWeight}/55% Points</span>
                   </div>
-                  <span style={{ fontWeight: '700', fontSize: '0.85rem', background: '#f1f5f9', padding: '0.4rem 0.8rem', borderRadius: '6px' }}>{unitWeight}/55% Points</span>
                 </div>
 
                 {isExpanded && (
-                  <div style={{ padding: '2.5rem', borderTop: '1px solid #f1f5f9', background: '#fcfdfb', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                  <div className="lesson-inside-body" style={{ padding: '2.5rem', borderTop: '1px solid #f1f5f9', background: '#fcfdfb', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                     <div>
-  <h5
-    style={{
-      margin: '0 0 0.5rem 0',
-      fontWeight: '700'
-    }}
-  >
-    Core Reading Resource
-  </h5>
-
-<div
-  style={{
-    background: '#ffffff',
-    border: '1px solid #e2e8f0',
-    padding: '1.5rem',
-    borderRadius: '12px',
-    lineHeight: '1.8',
-    color: '#475569',
-    overflowWrap: 'break-word',
-    whiteSpace: 'pre-line'
-  }}
->
-  {lesson.content}
-</div>
-  <button
-    disabled={status.content_read}
-    onClick={() =>
-      triggerProgressUpdateBackend(
-        lesson.id,
-        'content_read',
-        true
-      )
-    }
-    style={{
-      marginTop: '1rem',
-      background: '#3B592D',
-      color: '#fff',
-      border: 'none',
-      padding: '0.5rem 1.2rem',
-      borderRadius: '8px',
-      cursor: 'pointer'
-    }}
-  >
-    {status.content_read
-      ? '✓ Completed'
-      : 'Mark Material Read (+15%)'}
-  </button>
-</div>
+                      <h5 style={{ margin: '0 0 0.5rem 0', fontWeight: '700' }}>Core Reading Resource</h5>
+                      <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: '12px', lineHeight: '1.8', color: '#475569', overflowWrap: 'break-word', whiteSpace: 'pre-line' }}>
+                        {lesson.content}
+                      </div>
+                      <button
+                        disabled={status.content_read}
+                        onClick={() => triggerProgressUpdateBackend(lesson.id, 'content_read', true)}
+                        style={{ marginTop: '1rem', background: '#3B592D', color: '#fff', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', width: '100%', maxWidth: '280px' }}
+                      >
+                        {status.content_read ? '✓ Completed' : 'Mark Material Read (+15%)'}
+                      </button>
+                    </div>
 
                     {/* VIDEOPLAYER WITH TIMELINE RULES */}
                     <div>
@@ -647,7 +638,6 @@ const handleDownloadCertificate = async () => {
                               </div>
                             )}
                           </div>
-
                         </div>
                       </div>
                     </div>
@@ -660,92 +650,42 @@ const handleDownloadCertificate = async () => {
                           <p style={{ margin: '0 0 0.75rem 0', fontWeight: '700' }}>Q{qIndex+1}: {quizItem.question}</p>
                           {quizItem.options?.map((opt, oIndex) => (
                             <button
-  key={oIndex}
-  onClick={() => handleSelectQuizOption(lesson.id, qIndex, opt)}
-  style={{
-    display: 'block',
-    width: '100%',
-    padding: '0.65rem 1rem',
-    textAlign: 'left',
-    marginBottom: '0.5rem',
-    borderRadius: '8px',
-    border: '1px solid #e2e8f0',
-
-    background: (() => {
-
-      const selected =
-        selectedAnswers[`${lessonKey}-${qIndex}`];
-
-      const hasError =
-        quizErrors[`${lessonKey}-${qIndex}`];
-
-      /* WRONG ANSWER → RED */
-      if (
-        hasError &&
-        selected === opt &&
-        opt !== quizItem.answer
-      ) {
-        return '#dc2626';
-      }
-
-      /* CORRECT ANSWER → GREEN */
-      if (
-        quizLockedMap[lessonKey] &&
-        opt === quizItem.answer
-      ) {
-        return '#15803d';
-      }
-
-      /* SELECTED OPTION */
-      if (selected === opt) {
-        return '#3B592D';
-      }
-
-      return '#f8fafc';
-
-    })(),
-
-    color: (() => {
-
-      const selected =
-        selectedAnswers[`${lessonKey}-${qIndex}`];
-
-      const hasError =
-        quizErrors[`${lessonKey}-${qIndex}`];
-
-      if (
-        hasError &&
-        selected === opt &&
-        opt !== quizItem.answer
-      ) {
-        return '#ffffff';
-      }
-
-      if (
-        quizLockedMap[lessonKey] &&
-        opt === quizItem.answer
-      ) {
-        return '#ffffff';
-      }
-
-      if (selected === opt) {
-        return '#ffffff';
-      }
-
-      return '#475569';
-
-    })(),
-
-    cursor: 'pointer',
-    transition: 'all 0.25s ease'
-  }}
->
-  {opt}
-</button>
+                              key={oIndex}
+                              onClick={() => handleSelectQuizOption(lesson.id, qIndex, opt)}
+                              style={{
+                                display: 'block',
+                                width: '100%',
+                                padding: '0.65rem 1rem',
+                                textAlign: 'left',
+                                marginBottom: '0.5rem',
+                                borderRadius: '8px',
+                                border: '1px solid #e2e8f0',
+                                background: (() => {
+                                  const selected = selectedAnswers[`${lessonKey}-${qIndex}`];
+                                  const hasError = quizErrors[`${lessonKey}-${qIndex}`];
+                                  if (hasError && selected === opt && opt !== quizItem.answer) return '#dc2626';
+                                  if (quizLockedMap[lessonKey] && opt === quizItem.answer) return '#15803d';
+                                  if (selected === opt) return '#3B592D';
+                                  return '#f8fafc';
+                                })(),
+                                color: (() => {
+                                  const selected = selectedAnswers[`${lessonKey}-${qIndex}`];
+                                  const hasError = quizErrors[`${lessonKey}-${qIndex}`];
+                                  if (hasError && selected === opt && opt !== quizItem.answer) return '#ffffff';
+                                  if (quizLockedMap[lessonKey] && opt === quizItem.answer) return '#ffffff';
+                                  if (selected === opt) return '#ffffff';
+                                  return '#475569';
+                                })(),
+                                cursor: 'pointer',
+                                transition: 'all 0.25s ease'
+                              }}
+                            >
+                              {opt}
+                            </button>
                           ))}
                         </div>
                       ))}
-                      <button disabled={quizLockedMap[lessonKey]} onClick={() => verifyQuizAnswersBatch(lesson)} style={{ background: '#3B592D', color: '#fff', padding: '0.6rem 1.5rem', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
+                      <button disabled={quizLockedMap[lessonKey]} onClick={() => verifyQuizAnswersBatch(lesson)} style={{ background: '#3B592D', color: '#fff', padding: '0.6rem 1.5rem', border: 'none', borderRadius: '8px', cursor: 'pointer', width: '100%', fontWeight: '700' }}>
                         {quizLockedMap[lessonKey] ? '✓ Quiz Verified' : 'Submit Concept Answers (+15%)'}
                       </button>
                     </div>
@@ -758,7 +698,7 @@ const handleDownloadCertificate = async () => {
       </div>
 
       {/* NEW INTEGRATED ASSIGNMENTS SECTION */}
-      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '3rem' }}>
+      <div className="fluid-card-shell" style={{ marginBottom: '3rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: '#0f172a' }}>
           Course Core Tasks & Handouts (Value: 45%)
         </h2>
@@ -775,14 +715,14 @@ const handleDownloadCertificate = async () => {
 
               return (
                 <div key={task.id} style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div className="assignment-row-split">
                     <div>
-                      <h4 style={{ margin: 0, fontSize: '1.2rem', fontWeight: '700', color: '#0f172a' }}>{task.title || task.topic}</h4>
-                      <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.85rem', color: '#64748b' }}>
+                      <h4 style={{ margin: 0, fontSize: '1.2rem', fontWeight: '700', color: '#0f172a', lineHeight: '1.3' }}>{task.title || task.topic}</h4>
+                      <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.85rem', color: '#64748b', lineHeight: '1.4' }}>
                         Max Mark Metrics: {task.max_marks || '100'} Marks | Due: {new Date(task.due_date).toLocaleDateString()}
                       </p>
                     </div>
-                    <span style={{ fontSize: '0.8rem', fontWeight: '700', padding: '0.3rem 0.8rem', borderRadius: '6px', backgroundColor: isApproved ? '#dcfce7' : taskState?.status === "Submitted" ? '#e0f2fe' : '#fef3c7', color: isApproved ? '#15803d' : taskState?.status === "Submitted" ? '#0369a1' : '#d97706' }}>
+                    <span style={{ fontSize: '0.8rem', fontWeight: '700', padding: '0.3rem 0.8rem', borderRadius: '6px', backgroundColor: isApproved ? '#dcfce7' : taskState?.status === "Submitted" ? '#e0f2fe' : '#fef3c7', color: isApproved ? '#15803d' : taskState?.status === "Submitted" ? '#0369a1' : '#d97706', whiteSpace: 'nowrap' }}>
                       {taskState?.status === "Approved" && "Approved (+45%)"}
                       {taskState?.status === "Submitted" && "Submitted (Pending Review)"}
                       {taskState?.status === "Rejected" && "Rejected"}
@@ -800,125 +740,63 @@ const handleDownloadCertificate = async () => {
                     </div>
                   )}
 
-                 <div
-  style={{
-    borderTop: '1px solid #f1f5f9',
-    paddingTop: '1rem',
-    marginTop: '0.5rem',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    gap: '1rem'
-  }}
->
-  {/* APPROVED */}
-  {taskState?.status === "Approved" ? (
-    <span
-      style={{
-        color: '#15803d',
-        fontWeight: '700',
-        fontSize: '0.95rem'
-      }}
-    >
-      ✓ Assignment Approved & Locked
-    </span>
-  ) : taskState?.status === "Submitted" ? (
-
-    /* SUBMITTED BUT NOT APPROVED */
-    <>
-      <span
-        style={{
-          color: '#0369a1',
-          fontWeight: '600',
-          fontSize: '0.9rem'
-        }}
-      >
-        Waiting for admin review
-      </span>
-
-      <button
-        onClick={async () => {
-          try {
-
-            const response = await fetch(
-              `${backendUrl}/api/assignments/unsubmit`,
-              {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                  assignmentId: task.id,
-                  userId: userIdContext.asString
-                })
-              }
-            );
-
-            const data = await response.json();
-
-            if (!response.ok) {
-              throw new Error(data.message);
-            }
-
-            alert("Assignment unsubmitted successfully");
-
-            fetchCourseAndProgressData();
-
-          } catch (err) {
-            console.error(err);
-            alert(err.message || "Failed to unsubmit");
-          }
-        }}
-        style={{
-          background: '#dc2626',
-          color: '#ffffff',
-          border: 'none',
-          padding: '0.55rem 1.4rem',
-          borderRadius: '10px',
-          cursor: 'pointer',
-          fontWeight: '600'
-        }}
-      >
-        Unsubmit Assignment
-      </button>
-    </>
-  ) : (
-
-    /* PENDING / REJECTED */
-    <label
-      style={{
-        background:
-          taskState?.status === "Rejected"
-            ? '#b91c1c'
-            : '#3B592D',
-
-        color: '#fff',
-        padding: '0.55rem 1.5rem',
-        borderRadius: '10px',
-        fontWeight: '600',
-        fontSize: '0.9rem',
-        cursor: 'pointer',
-        display: 'inline-flex',
-        alignItems: 'center'
-      }}
-    >
-      {uploadingAssignmentId === task.id
-        ? "Uploading..."
-        : taskState?.status === "Rejected"
-        ? "🔁 Re-upload Document"
-        : "Upload Assignment"}
-
-      <input
-        type="file"
-        hidden
-        disabled={uploadingAssignmentId === task.id}
-        onChange={(e) =>
-          handleAssignmentDirectUpload(e, task.id)
-        }
-      />
-    </label>
-  )}
-</div>
+                  <div className="assignment-bottom-actions" style={{ borderTop: '1px solid #f1f5f9', paddingTop: '1rem', marginTop: '0.5rem' }}>
+                    {/* APPROVED */}
+                    {taskState?.status === "Approved" ? (
+                      <span style={{ color: '#15803d', fontWeight: '700', fontSize: '0.95rem' }}>
+                        ✓ Assignment Approved & Locked
+                      </span>
+                    ) : taskState?.status === "Submitted" ? (
+                      /* SUBMITTED BUT NOT APPROVED */
+                      <>
+                        <span style={{ color: '#0369a1', fontWeight: '600', fontSize: '0.9rem' }}>
+                          Waiting for admin review
+                        </span>
+                        <button
+                          onClick={async () => {
+                            try {
+                              const response = await fetch(
+                                `${backendUrl}/api/assignments/unsubmit`,
+                                {
+                                  method: 'POST',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({
+                                    assignmentId: task.id,
+                                    userId: userIdContext.asString
+                                  })
+                                }
+                              );
+                              const data = await response.json();
+                              if (!response.ok) throw new Error(data.message);
+                              alert("Assignment unsubmitted successfully");
+                              fetchCourseAndProgressData();
+                            } catch (err) {
+                              console.error(err);
+                              alert(err.message || "Failed to unsubmit");
+                            }
+                          }}
+                          style={{ background: '#dc2626', color: '#ffffff', border: 'none', padding: '0.55rem 1.4rem', borderRadius: '10px', cursor: 'pointer', fontWeight: '600' }}
+                        >
+                          Unsubmit Assignment
+                        </button>
+                      </>
+                    ) : (
+                      /* PENDING / REJECTED */
+                      <label style={{ background: taskState?.status === "Rejected" ? '#b91c1c' : '#3B592D', color: '#fff', padding: '0.55rem 1.5rem', borderRadius: '10px', fontWeight: '600', fontSize: '0.9rem', cursor: 'pointer', display: 'inline-flex', alignItems: 'center' }}>
+                        {uploadingAssignmentId === task.id
+                          ? "Uploading..."
+                          : taskState?.status === "Rejected"
+                          ? "🔁 Re-upload Document"
+                          : "Upload Assignment"}
+                        <input
+                          type="file"
+                          hidden
+                          disabled={uploadingAssignmentId === task.id}
+                          onChange={(e) => handleAssignmentDirectUpload(e, task.id)}
+                        />
+                      </label>
+                    )}
+                  </div>
                 </div>
               );
             })
