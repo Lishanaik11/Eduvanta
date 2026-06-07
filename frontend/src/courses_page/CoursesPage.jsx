@@ -53,6 +53,7 @@ const CoursesPage = ({ viewMode }) => {
 
         if (res.ok) {
           setCourses(data.courses || []);
+          console.log(courses);
         }
       } catch (err) {
         console.error("Failed to load courses", err);
