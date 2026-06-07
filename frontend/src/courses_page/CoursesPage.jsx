@@ -483,7 +483,7 @@ const CoursesPage = ({ viewMode }) => {
           </Typography>
         </Paper>
       ) : (
-        <Grid container spacing={3} alignItems="stretch"> {/* Explicit alignment stretch across rows */}
+        <Grid container spacing={3} sx={{ alignItems: "stretch"}}>{/* Explicit alignment stretch across rows */}
           {coursesToRender.map((course) => {
             const status = userEnrollments[String(course.id)];
             const isNotesMode = viewMode === 'notes';
@@ -509,38 +509,37 @@ const CoursesPage = ({ viewMode }) => {
                 sm={6} 
                 md={4} 
                 key={course.id} 
-                sx={{ display: 'flex' }} // Force parent block cell to pass full height layout to Paper
+                sx={{ display: 'flex', alignSelf: "stretch" }} // Force parent block cell to pass full height layout to Paper
               >
-                <Paper 
-                  elevation={0}
-                  sx={{
-                    width: "100%",
-                    boxSizing: "border-box",
-                    padding: "1.8rem",
-                    background: "#ffffff",
-                    borderRadius: "20px",
-                    border: "1px solid",
-                    borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
-                    display: "flex",                 
-                    flexDirection: "column",
-                    justifyContent: "space-between", 
-                    flexGrow: 1, // Ensures shorter data lists match row sibling sizes cleanly
-                    height: "340px",
-                    display: "flex",
-                    flexDirection: "column",
-                    position: 'relative',
-                    overflow: 'hidden',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.01)',
-                    '&:hover': {
-                      transform: 'translateY(-6px)',
-                      boxShadow: isEnrolled && !isNotesMode 
-                        ? '0 20px 30px -10px rgba(59, 89, 45, 0.15)' 
-                        : '0 20px 30px -10px rgba(15, 23, 42, 0.08)',
-                      borderColor: isEnrolled && !isNotesMode ? '#3B592D' : '#cbd5e1'
-                    }
-                  }}
-                >
+                <Paper
+  elevation={0}
+  sx={{
+    width: "100%",
+    height: "340px",
+    minHeight: "340px",
+    maxHeight: "340px",
+
+    display: "flex",
+    flexDirection: "column",
+
+    p: "1.8rem",
+    boxSizing: "border-box",
+
+    background: "#fff",
+    borderRadius: "20px",
+    border: "1px solid",
+    borderColor:
+      isEnrolled && !isNotesMode
+        ? "#d1e7d6"
+        : "#e2e8f0",
+
+    position: "relative",
+    overflow: "hidden",
+
+    transition:
+      "all 0.3s cubic-bezier(0.4,0,0.2,1)"
+  }}
+>
                   {/* Decorative top color edge rule line */}
                   <Box sx={{ 
                     position: 'absolute', 
@@ -551,12 +550,13 @@ const CoursesPage = ({ viewMode }) => {
                     background: isEnrolled && !isNotesMode ? 'linear-gradient(90deg, #3B592D, #689f4c)' : 'linear-gradient(90deg, #e2e8f0, #cbd5e1)'
                   }} />
 
-                  <Box
+<Box
   sx={{
+    flex: 1,
     display: "flex",
     flexDirection: "column",
-    flexGrow: 1,
-     gap: 1
+    overflow: "hidden",
+    gap: 1
   }}
 >
                     {/* Status badge row layout - Always takes 24px of height even if empty to prevent misalignment */}
@@ -579,12 +579,12 @@ const CoursesPage = ({ viewMode }) => {
 
                     {/* Fixed uniform title height zone */}
                     <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
-                    <Box
+<Box
   sx={{
-    height: '60px',
-    minHeight: '60px',
-    maxHeight: '60px',
-    overflow: 'hidden'
+    height: "60px",
+    minHeight: "60px",
+    maxHeight: "60px",
+    overflow: "hidden"
   }}
 >
   <Typography
@@ -608,17 +608,13 @@ const CoursesPage = ({ viewMode }) => {
                     {/* Strict Line Clamping Bounds */}
 <Typography
   sx={{
-    fontSize: '0.875rem',
-    color: '#64748b',
-    fontWeight: '500',
-    lineHeight: '1.6',
-    height: '67px',
-    minHeight: '67px',
-    maxHeight: '67px',
-    overflow: 'hidden',
-    display: '-webkit-box',
+    height: "72px",
+    minHeight: "72px",
+    maxHeight: "72px",
+    overflow: "hidden",
+    display: "-webkit-box",
     WebkitLineClamp: 3,
-    WebkitBoxOrient: 'vertical'
+    WebkitBoxOrient: "vertical"
   }}
 >
   {course.description}
