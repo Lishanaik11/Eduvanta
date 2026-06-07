@@ -463,15 +463,15 @@ const handleDownloadCertificate = async () => {
 
         {/* CONDITION 1: SHOW DOWNLOAD PANEL ONLY IF PROGRESS IS TRULY 100% */}
         {currentDisplayProgress === 100 && (
-          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', border: '1px solid #bbf7d0', borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem', animation: 'fadeIn 0.5s ease' }}>
-            <div>
+          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', border: '1px solid #bbf7d0', borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem', animation: 'fadeIn 0.5s ease' ,  flexWrap: 'wrap' }}>
+            <div style={{ minWidth: '250px', flex: 1}}>
               <h3 style={{ margin: 0, color: '#14532d', fontWeight: '800', fontSize: '1.3rem' }}>Congratulations! You've Completed the Course</h3>
               <p style={{ margin: '0.25rem 0 0 0', color: '#166534', fontSize: '0.95rem' }}>Your academic achievements are saved. You can now download your credential validation certificate.</p>
             </div>
             <button 
               onClick={handleDownloadCertificate}
               disabled={isGeneratingCertificate}
-              style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', whiteSpace: 'nowrap' }}
+              style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', whiteSpace: 'nowrap' ,width: '100%', maxWidth: '220px' }}
               onMouseEnter={(e) => e.target.style.background = '#2c4322'}
               onMouseLeave={(e) => e.target.style.background = '#3B592D'}
             >
