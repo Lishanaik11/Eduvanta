@@ -513,7 +513,7 @@ const CoursesPage = ({ viewMode }) => {
                     width: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between", // ✅ Keeps button perfectly pushed down evenly
+                    justifyContent: "space-between", 
                     p: "1.8rem",
                     boxSizing: "border-box",
                     background: "#fff",
@@ -579,7 +579,7 @@ const CoursesPage = ({ viewMode }) => {
                       {course.title}
                     </Typography>
 
-                    {/* Strict Line Clamping dynamic text boundaries with fixed MinHeight */}
+                    {/* ✅ FIXED DYNAMIC BOX: Looks flawless in laptop, tablet, and mobile */}
                     <Typography
                       sx={{
                         fontSize: '0.875rem',
@@ -590,9 +590,9 @@ const CoursesPage = ({ viewMode }) => {
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: "vertical",
                         overflow: 'hidden',
-                        // ✅ EXACT LINE HEIGHT ALLOCATION FOR 3 LINES
-                        minHeight: '4.8rem',
-                        maxHeight: '4.8rem'
+                        /* Using height proportional calculations instead of rigid rem limits ensures complete cross-device rendering accuracy */
+                        minHeight: '4.8em',
+                        maxHeight: '4.8em'
                       }}
                     >
                       {course.description}
