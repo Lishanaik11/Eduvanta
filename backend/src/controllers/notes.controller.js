@@ -7,6 +7,10 @@ export const createNote = async (req, res) => {
 
   try {
 
+    console.log("========== CREATE NOTE ==========");
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
     const { title, course_id, description } = req.body;
 
     if (!title || !course_id) {
@@ -19,12 +23,22 @@ export const createNote = async (req, res) => {
     }
 
     let fileUrl = null;
+    let fileType = null;
 
     if (req.file) {
 
       fileUrl = `/uploads/notes/${req.file.filename}`;
 
+      fileType =
+        req.file.originalname
+          .split('.')
+          .pop()
+          ?.toUpperCase() || 'FILE';
+
     }
+
+    console.log("FILE URL:", fileUrl);
+    console.log("FILE TYPE:", fileType);
 
     const query = `
       INSERT INTO course_notes
@@ -33,9 +47,10 @@ export const createNote = async (req, res) => {
         description,
         course_id,
         file_url,
+        file_type,
         uploaded_at
       )
-      VALUES ($1, $2, $3, $4, NOW())
+      VALUES ($1, $2, $3, $4, $5, NOW())
       RETURNING *;
     `;
 
@@ -43,8 +58,11 @@ export const createNote = async (req, res) => {
       title,
       description || '',
       course_id,
-      fileUrl
+      fileUrl,
+      fileType
     ]);
+
+    console.log("INSERTED NOTE:", result.rows[0]);
 
     return res.status(201).json({
       success: true,
