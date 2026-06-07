@@ -508,7 +508,7 @@ const CoursesPage = ({ viewMode }) => {
                 sm={6} 
                 md={4} 
                 key={course.id} 
-                sx={{ display: 'flex', flexDirection: 'column' }} // Force parent block cell to pass full height layout to Paper
+                sx={{ display: 'flex' }} // Force parent block cell to pass full height layout to Paper
               >
                 <Paper 
                   elevation={0}
