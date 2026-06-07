@@ -433,7 +433,7 @@ const IndividualCourseView = () => {
   return (
     <div className="course-view-container" style={{ minHeight: '100vh', background: '#f8fafc', color: '#1e293b', padding: '3rem 2rem', fontFamily: "'Poppins', sans-serif", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       
-      {/* Native Micro Responsive Media Queries block */}
+      {/* Dynamic Mobile Media Query Injector */}
       <style>{`
         .course-view-container { width: 100%; box-sizing: border-box; }
         .fluid-card-shell { width: 100%; max-width: 950px; box-sizing: border-box; }
@@ -450,7 +450,6 @@ const IndividualCourseView = () => {
           h1 { font-size: 1.85rem !important; }
           .header-progress-split { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
           .lesson-header-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-          .lesson-header-row > span { align-self: flex-start; }
           .lesson-meta-badges { flex-direction: column; gap: 0.3rem; }
           .assignment-row-split { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
           .assignment-bottom-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 0.75rem; }
@@ -498,6 +497,8 @@ const IndividualCourseView = () => {
               onClick={handleDownloadCertificate}
               disabled={isGeneratingCertificate}
               style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', whiteSpace: 'nowrap', width: '100%', maxWidth: '220px' }}
+              onMouseEnter={(e) => e.target.style.background = '#2c4322'}
+              onMouseLeave={(e) => e.target.style.background = '#3B592D'}
             >
               {isGeneratingCertificate ? "Generating PDF..." : "Claim Certificate 🏆"}
             </button>
@@ -543,7 +544,7 @@ const IndividualCourseView = () => {
                         <span style={{ color: status.quiz_completed ? '#3B592D' : '#94a3b8', fontWeight: status.quiz_completed ? '600' : '400' }}>📝 Quiz ({status.quiz_completed ? '15%' : '0%'})</span>
                       </div>
                     </div>
-                    <span style={{ fontWeight: '700', fontSize: '0.85rem', background: '#f1f5f9', padding: '0.4rem 0.8rem', borderRadius: '6px', whiteSpace: 'nowrap' }}>{unitWeight}/55% Points</span>
+                    <span style={{ fontWeight: '700', fontSize: '0.85rem', background: '#f1f5f9', padding: '0.4rem 0.8rem', borderRadius: '6px', whiteSpace: 'nowrap', alignSelf: 'center' }}>{unitWeight}/55% Points</span>
                   </div>
                 </div>
 
@@ -557,7 +558,7 @@ const IndividualCourseView = () => {
                       <button
                         disabled={status.content_read}
                         onClick={() => triggerProgressUpdateBackend(lesson.id, 'content_read', true)}
-                        style={{ marginTop: '1rem', background: '#3B592D', color: '#fff', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', width: '100%', maxWidth: '280px' }}
+                        style={{ marginTop: '1rem', background: '#3B592D', color: '#fff', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '8px', cursor: 'pointer', fontWeight: '600' }}
                       >
                         {status.content_read ? '✓ Completed' : 'Mark Material Read (+15%)'}
                       </button>
@@ -685,7 +686,7 @@ const IndividualCourseView = () => {
                           ))}
                         </div>
                       ))}
-                      <button disabled={quizLockedMap[lessonKey]} onClick={() => verifyQuizAnswersBatch(lesson)} style={{ background: '#3B592D', color: '#fff', padding: '0.6rem 1.5rem', border: 'none', borderRadius: '8px', cursor: 'pointer', width: '100%', fontWeight: '700' }}>
+                      <button disabled={quizLockedMap[lessonKey]} onClick={() => verifyQuizAnswersBatch(lesson)} style={{ background: '#3B592D', color: '#fff', padding: '0.6rem 1.5rem', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '700' }}>
                         {quizLockedMap[lessonKey] ? '✓ Quiz Verified' : 'Submit Concept Answers (+15%)'}
                       </button>
                     </div>
@@ -717,7 +718,7 @@ const IndividualCourseView = () => {
                 <div key={task.id} style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '16px', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div className="assignment-row-split">
                     <div>
-                      <h4 style={{ margin: 0, fontSize: '1.2rem', fontWeight: '700', color: '#0f172a', lineHeight: '1.3' }}>{task.title || task.topic}</h4>
+                      <h4 style={{ margin: 0, fontSize: '1.2rem', fontWeight: '700', color: '#0f172a' }}>{task.title || task.topic}</h4>
                       <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.85rem', color: '#64748b', lineHeight: '1.4' }}>
                         Max Mark Metrics: {task.max_marks || '100'} Marks | Due: {new Date(task.due_date).toLocaleDateString()}
                       </p>
@@ -749,7 +750,7 @@ const IndividualCourseView = () => {
                     ) : taskState?.status === "Submitted" ? (
                       /* SUBMITTED BUT NOT APPROVED */
                       <>
-                        <span style={{ color: '#0369a1', fontWeight: '600', fontSize: '0.9rem' }}>
+                        <span style={{ color: '#0369a1', fontWeight: '600', fontSize: '0.9rem', alignSelf: 'center' }}>
                           Waiting for admin review
                         </span>
                         <button
