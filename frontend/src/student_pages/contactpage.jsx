@@ -245,7 +245,7 @@ const handleSubmit = async (e) => {
                 </Typography>
 
                 <Typography sx={{ color: '#64748b' }}>
-                  support@eduvantaa.com
+                  lishanaik11@gmail.com
                 </Typography>
               </Box>
             </Box>
@@ -284,7 +284,7 @@ const handleSubmit = async (e) => {
                 </Typography>
 
                 <Typography sx={{ color: '#64748b' }}>
-                  +91 9876543210
+                  +91 7666043331
                 </Typography>
               </Box>
             </Box>
