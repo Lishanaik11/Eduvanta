@@ -524,7 +524,7 @@ const CoursesPage = ({ viewMode }) => {
                     flexDirection: "column",
                     justifyContent: "space-between", 
                     flexGrow: 1, // Ensures shorter data lists match row sibling sizes cleanly
-                    minHeight: "350px", 
+                    Height: "350px", 
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -548,13 +548,14 @@ const CoursesPage = ({ viewMode }) => {
                     background: isEnrolled && !isNotesMode ? 'linear-gradient(90deg, #3B592D, #689f4c)' : 'linear-gradient(90deg, #e2e8f0, #cbd5e1)'
                   }} />
 
-                  <Box sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.5rem",
-                    flexGrow: 1,
-                    mb: "1.5rem"
-                  }}>
+                  <Box
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    flexGrow: 1,
+    mb: "1.5rem"
+  }}
+>
                     {/* Status badge row layout - Always takes 24px of height even if empty to prevent misalignment */}
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', minHeight: '24px' }}>
                       {isEnrolled && (
@@ -575,30 +576,30 @@ const CoursesPage = ({ viewMode }) => {
 
                     {/* Fixed uniform title height zone */}
                     <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
-                      <Typography variant="h6" sx={{ fontWeight: '800', color: '#0f172a', fontSize: '1.25rem', lineHeight: '1.4', letterSpacing: '-0.3px' }}>
-                        {course.title}
-                      </Typography>
+                     <Box sx={{ minHeight: "60px" }}>
+                     <Typography variant="h6">
+                      {course.title}
+                    </Typography>
+                    </Box>
                     </Box>
 
                     {/* Strict Line Clamping Bounds */}
                     <Typography
-                      sx={{
-                        fontSize: "0.875rem",
-                        color: "#64748b",
-                        fontWeight: "500",
-                        lineHeight: "1.6",
-                        whiteSpace: 'pre-line',
-                        display: "-webkit-box",
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                        height: "4.8em", 
-                        minHeight: "4.8em", 
-                        maxHeight: "4.8em"  
-                      }}
-                    >
-                      {course.description}
-                    </Typography>
+  sx={{
+    fontSize: "0.875rem",
+    color: "#64748b",
+    fontWeight: "500",
+    lineHeight: "1.6",
+    display: "-webkit-box",
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: "vertical",
+    overflow: "hidden",
+    minHeight: "67px", // 3 lines fixed
+    maxHeight: "67px"
+  }}
+>
+  {course.description}
+</Typography>
                   </Box>
 
                   <Box sx={{ mt: 'auto' }}>
