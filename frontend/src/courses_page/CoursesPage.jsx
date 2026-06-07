@@ -505,7 +505,7 @@ const CoursesPage = ({ viewMode }) => {
                 sm={6} 
                 md={4} 
                 key={course.id} 
-                sx={{ display: 'flex' }} // Native stretch layout handler passed down
+                sx={{ display: 'flex' }} 
               >
                 <Paper
                   elevation={0}
@@ -521,7 +521,7 @@ const CoursesPage = ({ viewMode }) => {
                     borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
                     position: "relative",
                     overflow: "hidden",
-                    flexGrow: 1, // Enforces equal height alignment across laptop/tab views
+                    flexGrow: 1, 
                     transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)",
                     '&:hover': {
                       transform: 'translateY(-4px)',
@@ -572,13 +572,13 @@ const CoursesPage = ({ viewMode }) => {
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
-                        minHeight: '3.5rem' // Maintains clean structural space matching multi-row title cases
+                        minHeight: '3.5rem' 
                       }}
                     >
                       {course.title}
                     </Typography>
 
-                    {/* Strict Line Clamping dynamic text boundaries */}
+                    {/* Strict Line Clamping dynamic text boundaries with fixed MinHeight */}
                     <Typography
                       sx={{
                         fontSize: '0.875rem',
@@ -588,7 +588,9 @@ const CoursesPage = ({ viewMode }) => {
                         display: "-webkit-box",
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: "vertical",
-                        overflow: 'hidden'
+                        overflow: 'hidden',
+                        // ✅ FIX HERE: Allocates uniform height equivalent to exactly 3 lines of text
+                        minHeight: '4.8rem' 
                       }}
                     >
                       {course.description}
