@@ -507,7 +507,6 @@ const CoursesPage = ({ viewMode }) => {
                   elevation={0}
                   sx={{
                     width: "100%",
-                    height: "100%",
                     boxSizing: "border-box",
                     padding: "1.8rem",
                     background: "#ffffff",
@@ -515,12 +514,14 @@ const CoursesPage = ({ viewMode }) => {
                     border: "1px solid",
                     borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
                     display: "flex",                 
-flexDirection: "column",
-height: "100%",
-                    minHeight: "280px",
+                    flexDirection: "column",
+                    justifyContent: "space-between", // Added to distribute top header content and bottom CTA button evenly
+                    height: "100%",
+                    minHeight: "320px", // Increased slightly to give comfortable multi-line clamping space
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    boxSizing: "border-box",
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.01)',
                     '&:hover': {
                       transform: 'translateY(-6px)',
@@ -541,12 +542,13 @@ height: "100%",
                     background: isEnrolled && !isNotesMode ? 'linear-gradient(90deg, #3B592D, #689f4c)' : 'linear-gradient(90deg, #e2e8f0, #cbd5e1)'
                   }} />
 
-               <Box sx={{
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.5rem",
-  flex: 1
-}}>
+                  <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.5rem",
+                    flex: 1,
+                    mb: "1.5rem" // Adds predictable visual spacing before the button box
+                  }}>
                     {/* Status badge row layout */}
                     {isEnrolled && (
                       <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
@@ -569,25 +571,26 @@ height: "100%",
                       {course.title}
                     </Typography>
 
-                   <Typography
-  sx={{
-    fontSize: "0.875rem",
-    color: "#64748b",
-    fontWeight: "500",
-    lineHeight: "1.6",
-    whiteSpace: 'pre-line',
-
-    display: "-webkit-box",
-    WebkitLineClamp: 3,
-    WebkitBoxOrient: "vertical",
-    overflow: "hidden"
-  }}
->
-  {course.description}
-</Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "0.875rem",
+                        color: "#64748b",
+                        fontWeight: "500",
+                        lineHeight: "1.6",
+                        whiteSpace: 'pre-line',
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        minHeight: "4.8em", // Key Fix: Reserves uniform empty row layout height for shorter cards
+                        maxHeight: "4.8em"  // Key Fix: Ensures strict box bounds matching 3 lines of line-height (1.6 * 3)
+                      }}
+                    >
+                      {course.description}
+                    </Typography>
                   </Box>
 
-                  <Box>
+                  <Box sx={{ mt: 'auto' }}>
                     <Button
                       fullWidth
                       variant={isEnrolled && !isNotesMode ? "outlined" : "contained"}
