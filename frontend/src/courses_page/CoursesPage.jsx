@@ -479,7 +479,7 @@ const CoursesPage = ({ viewMode }) => {
           </Typography>
         </Paper>
       ) : (
-        <Grid container spacing={3} sx={{ alignItems: "stretch" }}>
+        <Grid container spacing={3} alignItems="stretch">
           {coursesToRender.map((course) => {
             const status = userEnrollments[String(course.id)];
             const isNotesMode = viewMode === 'notes';
@@ -513,6 +513,7 @@ const CoursesPage = ({ viewMode }) => {
                     width: "100%",
                     display: "flex",
                     flexDirection: "column",
+                    justifyContent: "space-between", // ✅ Keeps button perfectly pushed down evenly
                     p: "1.8rem",
                     boxSizing: "border-box",
                     background: "#fff",
@@ -540,7 +541,7 @@ const CoursesPage = ({ viewMode }) => {
                   }} />
 
                   {/* Upper content card block container wrapper */}
-                  <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '0.75rem', mb: '1.5rem' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', mb: '1.5rem' }}>
                     
                     {/* Status badge row layout */}
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', height: '24px' }}>
@@ -589,8 +590,9 @@ const CoursesPage = ({ viewMode }) => {
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: "vertical",
                         overflow: 'hidden',
-                        // ✅ FIX HERE: Allocates uniform height equivalent to exactly 3 lines of text
-                        minHeight: '4.8rem' 
+                        // ✅ EXACT LINE HEIGHT ALLOCATION FOR 3 LINES
+                        minHeight: '4.8rem',
+                        maxHeight: '4.8rem'
                       }}
                     >
                       {course.description}
