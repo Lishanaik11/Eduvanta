@@ -211,21 +211,21 @@ const handleDownloadCertificate = async () => {
       }
     );
 
-    const data = await response.json();
-
     if (!response.ok) {
-      throw new Error(data.message || "Certificate generation failed");
+      const err = await response.json();
+      throw new Error(err.message || "Certificate generation failed");
     }
 
-    // ✅ FIX: download NOT blob
-    const certificateData = JSON.stringify(data.certificate, null, 2);
-    const blob = new Blob([certificateData], { type: "application/json" });
+    // ✅ IMPORTANT: treat response as PDF BLOB
+    const blob = await response.blob();
 
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
 
     link.href = url;
-    link.download = `${course.title.replace(/\s+/g, "_")}_certificate.json`;
+
+    // ✅ change extension to PDF
+    link.download = `${course.title.replace(/\s+/g, "_")}_certificate.pdf`;
 
     document.body.appendChild(link);
     link.click();
@@ -447,7 +447,7 @@ const handleDownloadCertificate = async () => {
     overflowX: 'hidden'
   }}
 >
-      <div style={{ width: '100%', maxWidth: '950px',width: '100%', marginBottom: '2.5rem' }}>
+      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '2.5rem' }}>
         <button onClick={() => navigate(-1)} style={{ background: '#ffffff', border: '1px solid #e2e8f0', color: '#475569', padding: '0.65rem 1.5rem', borderRadius: '12px', cursor: 'pointer', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
           <span>←</span> Back to System Hub
         </button>
@@ -482,7 +482,25 @@ const handleDownloadCertificate = async () => {
             <button 
               onClick={handleDownloadCertificate}
               disabled={isGeneratingCertificate}
-              style={{ background: '#3B592D', color: '#ffffff', border: 'none', padding: '0.85rem 2rem', borderRadius: '12px', fontWeight: '700', fontSize: '0.95rem', cursor: 'pointer', boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)', transition: 'transform 0.2s, background 0.2s', width: 'fit-content', minWidth: '180px' }}
+style={{
+  background: '#3B592D',
+  color: '#ffffff',
+  border: 'none',
+  padding: '0.85rem 2rem',
+  borderRadius: '12px',
+  fontWeight: '700',
+  fontSize: '0.95rem',
+  cursor: 'pointer',
+  boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)',
+  transition: 'transform 0.2s, background 0.2s',
+
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  width: 'fit-content',   // ✅ KEY FIX
+  alignSelf: 'center'     // optional but helpful
+}}
               onMouseEnter={(e) => e.target.style.background = '#2c4322'}
               onMouseLeave={(e) => e.target.style.background = '#3B592D'}
             >
@@ -494,7 +512,7 @@ const handleDownloadCertificate = async () => {
         {/* CONDITION 2: SHOW WAITING NOTICE IF REQUISITES ARE MET BUT SUBMISSIONS ARE UNAPPROVED */}
         {currentDisplayProgress < 100 && isPendingApprovalOnly && (
           <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)', border: '1px solid #fde68a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '0.5rem', animation: 'fadeIn 0.5s ease' }}>
-            <h3 style={{ margin: 0, color: '#92400e', fontWeight: '800', fontSize: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <h3 style={{ margin: 0, color: '#92400e', fontWeight: '800', fontSize: '1.25rem', display: 'flex', alignItems: 'stretch', gap: '0.5rem' }}>
               ⏳ Certificate Status: Pending Approval
             </h3>
             <p style={{ margin: 0, color: '#b45309', fontSize: '0.95rem', lineHeight: '1.5' }}>
