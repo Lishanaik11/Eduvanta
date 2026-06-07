@@ -482,7 +482,7 @@ const CoursesPage = ({ viewMode }) => {
           </Typography>
         </Paper>
       ) : (
-        <Grid container spacing={3}>
+        <Grid container spacing={3} alignItems="stretch"> {/* Explicit alignment stretch across rows */}
           {coursesToRender.map((course) => {
             const status = userEnrollments[String(course.id)];
             const isNotesMode = viewMode === 'notes';
@@ -502,7 +502,14 @@ const CoursesPage = ({ viewMode }) => {
             }
 
             return (
-              <Grid item xs={12} sm={6} md={4} key={course.id} sx={{ display: 'flex' }}>
+              <Grid 
+                item 
+                xs={12} 
+                sm={6} 
+                md={4} 
+                key={course.id} 
+                sx={{ display: 'flex', flexDirection: 'column' }} // Force parent block cell to pass full height layout to Paper
+              >
                 <Paper 
                   elevation={0}
                   sx={{
@@ -515,13 +522,12 @@ const CoursesPage = ({ viewMode }) => {
                     borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
                     display: "flex",                 
                     flexDirection: "column",
-                    justifyContent: "space-between", // Added to distribute top header content and bottom CTA button evenly
-                    height: "100%",
-                    minHeight: "320px", // Increased slightly to give comfortable multi-line clamping space
+                    justifyContent: "space-between", 
+                    flexGrow: 1, // Ensures shorter data lists match row sibling sizes cleanly
+                    minHeight: "350px", 
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    boxSizing: "border-box",
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.01)',
                     '&:hover': {
                       transform: 'translateY(-6px)',
@@ -546,12 +552,12 @@ const CoursesPage = ({ viewMode }) => {
                     display: "flex",
                     flexDirection: "column",
                     gap: "0.5rem",
-                    flex: 1,
-                    mb: "1.5rem" // Adds predictable visual spacing before the button box
+                    flexGrow: 1,
+                    mb: "1.5rem"
                   }}>
-                    {/* Status badge row layout */}
-                    {isEnrolled && (
-                      <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+                    {/* Status badge row layout - Always takes 24px of height even if empty to prevent misalignment */}
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', minHeight: '24px' }}>
+                      {isEnrolled && (
                         <Chip 
                           icon={<BookmarkCheckIcon style={{ color: status === 'Pending' ? '#b45309' : '#15803d', fontSize: '1rem' }} />}
                           label={status} 
@@ -564,13 +570,17 @@ const CoursesPage = ({ viewMode }) => {
                             height: '24px'
                           }} 
                         />
-                      </Box>
-                    )}
+                      )}
+                    </Box>
 
-                    <Typography variant="h6" sx={{ fontWeight: '800', color: '#0f172a', fontSize: '1.25rem', lineHeight: '1.4', letterSpacing: '-0.3px' }}>
-                      {course.title}
-                    </Typography>
+                    {/* Fixed uniform title height zone */}
+                    <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
+                      <Typography variant="h6" sx={{ fontWeight: '800', color: '#0f172a', fontSize: '1.25rem', lineHeight: '1.4', letterSpacing: '-0.3px' }}>
+                        {course.title}
+                      </Typography>
+                    </Box>
 
+                    {/* Strict Line Clamping Bounds */}
                     <Typography
                       sx={{
                         fontSize: "0.875rem",
@@ -582,8 +592,9 @@ const CoursesPage = ({ viewMode }) => {
                         WebkitLineClamp: 3,
                         WebkitBoxOrient: "vertical",
                         overflow: "hidden",
-                        minHeight: "4.8em", // Key Fix: Reserves uniform empty row layout height for shorter cards
-                        maxHeight: "4.8em"  // Key Fix: Ensures strict box bounds matching 3 lines of line-height (1.6 * 3)
+                        height: "4.8em", 
+                        minHeight: "4.8em", 
+                        maxHeight: "4.8em"  
                       }}
                     >
                       {course.description}
