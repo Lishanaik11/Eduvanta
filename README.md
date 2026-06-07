@@ -14,7 +14,7 @@ https://eduvanta-app.vercel.app/login
 https://eduvanta-app.vercel.app/dashboard  
 
 👨‍💼 Admin Login:  
-https://eduvanta-app.vercel.app/admin  
+https://eduvanta-app.vercel.app/admin  - (username - Lisha Naik , password - lisha)
 
 📊 Admin Dashboard:  
 https://eduvanta-app.vercel.app/admin-dashboard  
