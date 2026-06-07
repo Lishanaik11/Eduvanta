@@ -433,10 +433,21 @@ const handleDownloadCertificate = async () => {
   
 
   return (
-    <div style={{ minHeight: '100vh', background: '#f8fafc', color: '#1e293b', padding: '3rem 2rem', fontFamily: "'Poppins', sans-serif", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      
-      {/* BACK NAVIGATION BAR */}
-      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '2.5rem' }}>
+  <div
+  style={{
+    minHeight: '100vh',
+    background: '#f8fafc',
+    color: '#1e293b',
+    padding: 'clamp(1rem, 4vw, 3rem)',
+    fontFamily: "'Poppins', sans-serif",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    overflowX: 'hidden'
+  }}
+>
+      <div style={{ width: '100%', maxWidth: '950px',width: '100%', marginBottom: '2.5rem' }}>
         <button onClick={() => navigate(-1)} style={{ background: '#ffffff', border: '1px solid #e2e8f0', color: '#475569', padding: '0.65rem 1.5rem', borderRadius: '12px', cursor: 'pointer', fontWeight: '600', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
           <span>←</span> Back to System Hub
         </button>
@@ -758,7 +769,7 @@ const handleDownloadCertificate = async () => {
       </div>
 
       {/* NEW INTEGRATED ASSIGNMENTS SECTION */}
-      <div style={{ width: '100%', maxWidth: '950px', marginBottom: '3rem' }}>
+      <div style={{ width: '100%', maxWidth: '950px',width: '100%', marginBottom: '3rem' }}>
         <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1.5rem', color: '#0f172a' }}>
           Course Core Tasks & Handouts (Value: 45%)
         </h2>
