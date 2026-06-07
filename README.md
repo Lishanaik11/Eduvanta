@@ -4,6 +4,23 @@ A full-stack role-based e-learning system with Admin & Student dashboards, cours
 🚀 Overview : 
 Eduvanta is a modern Learning Management System (LMS) designed to manage online education efficiently.
 
+**Live Demo:**  
+https://eduvanta-app.vercel.app  
+
+👨‍🎓 Student Login:  
+https://eduvanta-app.vercel.app/login  
+
+🏠 Student Dashboard:  
+https://eduvanta-app.vercel.app/dashboard  
+
+👨‍💼 Admin Login:  
+https://eduvanta-app.vercel.app/admin  
+
+📊 Admin Dashboard:  
+https://eduvanta-app.vercel.app/admin-dashboard  
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **It provides two main panels:**
 - 👨‍💼Admin Panel → Manages platform, courses, users, analytics, and learning flow
 - 👨‍🎓Student Panel → Learns courses, completes assignments, tracks progress, and earns certificates
