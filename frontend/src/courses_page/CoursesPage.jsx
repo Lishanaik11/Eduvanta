@@ -524,7 +524,7 @@ const CoursesPage = ({ viewMode }) => {
                     flexDirection: "column",
                     justifyContent: "space-between", 
                     flexGrow: 1, // Ensures shorter data lists match row sibling sizes cleanly
-                    Height: "350px", 
+                    height: "350px", 
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
