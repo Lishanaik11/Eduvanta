@@ -53,7 +53,6 @@ const CoursesPage = ({ viewMode }) => {
 
         if (res.ok) {
           setCourses(data.courses || []);
-          console.log(courses);
         }
       } catch (err) {
         console.error("Failed to load courses", err);
@@ -146,8 +145,6 @@ const CoursesPage = ({ viewMode }) => {
 
       if (res.ok) {
         const data = await res.json();
-        console.log("COURSE NOTES RESPONSE:", data);
-
         if (data.success) {
           setCourseNotesList(data.notes || []);
         } else {
@@ -309,7 +306,6 @@ const CoursesPage = ({ viewMode }) => {
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       width: '100%',
-                      height: '100%',
                       boxSizing: 'border-box',
                       minHeight: '220px',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -320,17 +316,17 @@ const CoursesPage = ({ viewMode }) => {
                       }
                     }}
                   >
-                    <Box sx={{ mt: 'auto' }}>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', mb: '0.75rem' }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', mb: '1.5rem' }}>
+                      <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem' }}>
                         <Typography sx={{ fontWeight: '800', color: '#1e293b', fontSize: '1.1rem', lineHeight: '1.4' }}>
                           {note.title}
                         </Typography>
-                        <Box sx={{ fontSize: '1.5rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.08))' }}>
+                        <Box sx={{ fontSize: '1.5rem', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.08))', flexShrink: 0 }}>
                           {getDocIcon(note.file_type)}
                         </Box>
                       </Box>
 
-                      <Typography sx={{ fontSize: '0.875rem', color: '#64748b', fontWeight: '500', lineHeight: '1.6', mb: '1.5rem' }}>
+                      <Typography sx={{ fontSize: '0.875rem', color: '#64748b', fontWeight: '500', lineHeight: '1.6' }}>
                         {note.description || "No description overview provided for this specific material entry."}
                       </Typography>
                     </Box>
@@ -472,7 +468,7 @@ const CoursesPage = ({ viewMode }) => {
         <Grid container spacing={3} sx={{ justifyContent: 'flex-start' }}>
           {[1, 2, 3].map((n) => (
             <Grid item xs={12} sm={6} md={4} key={n}>
-              <Skeleton variant="rounded" height={260} sx={{ borderRadius: '20px' }} />
+              <Skeleton variant="rounded" height={280} sx={{ borderRadius: '20px' }} />
             </Grid>
           ))}
         </Grid>
@@ -483,7 +479,7 @@ const CoursesPage = ({ viewMode }) => {
           </Typography>
         </Paper>
       ) : (
-        <Grid container spacing={3} sx={{ alignItems: "stretch"}}>{/* Explicit alignment stretch across rows */}
+        <Grid container spacing={3} sx={{ alignItems: "stretch" }}>
           {coursesToRender.map((course) => {
             const status = userEnrollments[String(course.id)];
             const isNotesMode = viewMode === 'notes';
@@ -509,37 +505,30 @@ const CoursesPage = ({ viewMode }) => {
                 sm={6} 
                 md={4} 
                 key={course.id} 
-                sx={{ display: 'flex', alignSelf: "stretch" }} // Force parent block cell to pass full height layout to Paper
+                sx={{ display: 'flex' }} // Native stretch layout handler passed down
               >
                 <Paper
-  elevation={0}
-  sx={{
-    width: "100%",
-    height: "340px",
-    minHeight: "340px",
-    maxHeight: "340px",
-
-    display: "flex",
-    flexDirection: "column",
-
-    p: "1.8rem",
-    boxSizing: "border-box",
-
-    background: "#fff",
-    borderRadius: "20px",
-    border: "1px solid",
-    borderColor:
-      isEnrolled && !isNotesMode
-        ? "#d1e7d6"
-        : "#e2e8f0",
-
-    position: "relative",
-    overflow: "hidden",
-
-    transition:
-      "all 0.3s cubic-bezier(0.4,0,0.2,1)"
-  }}
->
+                  elevation={0}
+                  sx={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    p: "1.8rem",
+                    boxSizing: "border-box",
+                    background: "#fff",
+                    borderRadius: "20px",
+                    border: "1px solid",
+                    borderColor: isEnrolled && !isNotesMode ? "#d1e7d6" : "#e2e8f0",
+                    position: "relative",
+                    overflow: "hidden",
+                    flexGrow: 1, // Enforces equal height alignment across laptop/tab views
+                    transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)",
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: '0 12px 24px -6px rgba(0,0,0,0.05)'
+                    }
+                  }}
+                >
                   {/* Decorative top color edge rule line */}
                   <Box sx={{ 
                     position: 'absolute', 
@@ -550,17 +539,11 @@ const CoursesPage = ({ viewMode }) => {
                     background: isEnrolled && !isNotesMode ? 'linear-gradient(90deg, #3B592D, #689f4c)' : 'linear-gradient(90deg, #e2e8f0, #cbd5e1)'
                   }} />
 
-<Box
-  sx={{
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    overflow: "hidden",
-    gap: 1
-  }}
->
-                    {/* Status badge row layout - Always takes 24px of height even if empty to prevent misalignment */}
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', height: '32px', minHeight: '32px'}}>
+                  {/* Upper content card block container wrapper */}
+                  <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '0.75rem', mb: '1.5rem' }}>
+                    
+                    {/* Status badge row layout */}
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', height: '24px' }}>
                       {isEnrolled && (
                         <Chip 
                           icon={<BookmarkCheckIcon style={{ color: status === 'Pending' ? '#b45309' : '#15803d', fontSize: '1rem' }} />}
@@ -577,51 +560,43 @@ const CoursesPage = ({ viewMode }) => {
                       )}
                     </Box>
 
-                    {/* Fixed uniform title height zone */}
-                    <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
-<Box
-  sx={{
-    height: "60px",
-    minHeight: "60px",
-    maxHeight: "60px",
-    overflow: "hidden"
-  }}
->
-  <Typography
-    variant="h6"
-    sx={{
-      fontWeight: 800,
-      color: '#0f172a',
-      fontSize: '1.25rem',
-      lineHeight: 1.4,
-      display: '-webkit-box',
-      WebkitLineClamp: 2,
-      WebkitBoxOrient: 'vertical',
-      overflow: 'hidden'
-    }}
-  >
-    {course.title}
-  </Typography>
-</Box>
-                    </Box>
+                    {/* Fixed dynamic line clamping header title zone */}
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        fontWeight: 800,
+                        color: '#0f172a',
+                        fontSize: '1.25rem',
+                        lineHeight: 1.4,
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        minHeight: '3.5rem' // Maintains clean structural space matching multi-row title cases
+                      }}
+                    >
+                      {course.title}
+                    </Typography>
 
-                    {/* Strict Line Clamping Bounds */}
-<Typography
-  sx={{
-    height: "72px",
-    minHeight: "72px",
-    maxHeight: "72px",
-    overflow: "hidden",
-    display: "-webkit-box",
-    WebkitLineClamp: 3,
-    WebkitBoxOrient: "vertical"
-  }}
->
-  {course.description}
-</Typography>
+                    {/* Strict Line Clamping dynamic text boundaries */}
+                    <Typography
+                      sx={{
+                        fontSize: '0.875rem',
+                        color: '#64748b',
+                        fontWeight: '500',
+                        lineHeight: '1.6',
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: 'hidden'
+                      }}
+                    >
+                      {course.description}
+                    </Typography>
                   </Box>
 
-                  <Box sx={{ marginTop: 'auto', flexShrink: 0 }}>
+                  {/* Bottom locked button component bar layout block */}
+                  <Box sx={{ flexShrink: 0, mt: 'auto' }}>
                     <Button
                       fullWidth
                       variant={isEnrolled && !isNotesMode ? "outlined" : "contained"}
