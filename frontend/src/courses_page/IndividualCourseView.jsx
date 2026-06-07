@@ -474,7 +474,18 @@ const handleDownloadCertificate = async () => {
 
         {/* CONDITION 1: SHOW DOWNLOAD PANEL ONLY IF PROGRESS IS TRULY 100% */}
         {currentDisplayProgress === 100 && (
-          <div style={{ marginTop: '2rem', padding: '2rem', background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', border: '1px solid #bbf7d0', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '1.5rem', animation: 'fadeIn 0.5s ease' }}>
+          <div style={{
+  marginTop: '2rem',
+  padding: '2rem',
+  background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+  border: '1px solid #bbf7d0',
+  borderRadius: '16px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',   // ✅ IMPORTANT FIX
+  textAlign: 'center',    // ✅ IMPORTANT FIX
+  gap: '1.2rem'
+}}>
             <div>
               <h3 style={{ margin: 0, color: '#14532d', fontWeight: '800', fontSize: '1.3rem' }}>Congratulations! You've Completed the Course</h3>
               <p style={{ margin: '0.25rem 0 0 0', color: '#166534', fontSize: '0.95rem', lineHeight: '1.5' }}>Your academic achievements are saved. You can now download your credential validation certificate.</p>
@@ -493,13 +504,9 @@ style={{
   cursor: 'pointer',
   boxShadow: '0 4px 12px rgba(59, 89, 45, 0.25)',
   transition: 'transform 0.2s, background 0.2s',
-
   display: 'inline-flex',
   alignItems: 'center',
-  justifyContent: 'center',
-
-  width: 'fit-content',   // ✅ KEY FIX
-  alignSelf: 'center'     // optional but helpful
+  justifyContent: 'center'
 }}
               onMouseEnter={(e) => e.target.style.background = '#2c4322'}
               onMouseLeave={(e) => e.target.style.background = '#3B592D'}
