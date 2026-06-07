@@ -524,7 +524,9 @@ const CoursesPage = ({ viewMode }) => {
                     flexDirection: "column",
                     justifyContent: "space-between", 
                     flexGrow: 1, // Ensures shorter data lists match row sibling sizes cleanly
-                    height: "350px", 
+                    height: "340px",
+                    display: "flex",
+                    flexDirection: "column",
                     position: 'relative',
                     overflow: 'hidden',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -553,11 +555,11 @@ const CoursesPage = ({ viewMode }) => {
     display: "flex",
     flexDirection: "column",
     flexGrow: 1,
-    mb: "1.5rem"
+     gap: 1
   }}
 >
                     {/* Status badge row layout - Always takes 24px of height even if empty to prevent misalignment */}
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', minHeight: '24px' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%', height: '32px', minHeight: '32px'}}>
                       {isEnrolled && (
                         <Chip 
                           icon={<BookmarkCheckIcon style={{ color: status === 'Pending' ? '#b45309' : '#15803d', fontSize: '1rem' }} />}
@@ -576,7 +578,14 @@ const CoursesPage = ({ viewMode }) => {
 
                     {/* Fixed uniform title height zone */}
                     <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
-                     <Box sx={{ minHeight: "60px" }}>
+                    <Box
+  sx={{
+    height: '60px',
+    minHeight: '60px',
+    maxHeight: '60px',
+    overflow: 'hidden'
+  }}
+>
   <Typography
     variant="h6"
     sx={{
@@ -584,10 +593,10 @@ const CoursesPage = ({ viewMode }) => {
       color: '#0f172a',
       fontSize: '1.25rem',
       lineHeight: 1.4,
-      overflow: 'hidden',
       display: '-webkit-box',
       WebkitLineClamp: 2,
       WebkitBoxOrient: 'vertical',
+      overflow: 'hidden'
     }}
   >
     {course.title}
@@ -596,25 +605,26 @@ const CoursesPage = ({ viewMode }) => {
                     </Box>
 
                     {/* Strict Line Clamping Bounds */}
-     <Typography
+<Typography
   sx={{
-    fontSize: "0.875rem",
-    color: "#64748b",
-    fontWeight: "500",
-    lineHeight: "1.6",
-    display: "-webkit-box",
+    fontSize: '0.875rem',
+    color: '#64748b',
+    fontWeight: '500',
+    lineHeight: '1.6',
+    height: '67px',
+    minHeight: '67px',
+    maxHeight: '67px',
+    overflow: 'hidden',
+    display: '-webkit-box',
     WebkitLineClamp: 3,
-    WebkitBoxOrient: "vertical",
-    overflow: "hidden",
-    minHeight: "67px",
-    maxHeight: "67px"
+    WebkitBoxOrient: 'vertical'
   }}
 >
   {course.description}
 </Typography>
                   </Box>
 
-                  <Box sx={{ mt: 'auto' }}>
+                  <Box sx={{ marginTop: 'auto', flexShrink: 0 }}>
                     <Button
                       fullWidth
                       variant={isEnrolled && !isNotesMode ? "outlined" : "contained"}
