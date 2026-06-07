@@ -577,14 +577,26 @@ const CoursesPage = ({ viewMode }) => {
                     {/* Fixed uniform title height zone */}
                     <Box sx={{ minHeight: "3.5rem", display: "flex", alignItems: "flex-start" }}>
                      <Box sx={{ minHeight: "60px" }}>
-                     <Typography variant="h6">
-                      {course.title}
-                    </Typography>
-                    </Box>
+  <Typography
+    variant="h6"
+    sx={{
+      fontWeight: 800,
+      color: '#0f172a',
+      fontSize: '1.25rem',
+      lineHeight: 1.4,
+      overflow: 'hidden',
+      display: '-webkit-box',
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: 'vertical',
+    }}
+  >
+    {course.title}
+  </Typography>
+</Box>
                     </Box>
 
                     {/* Strict Line Clamping Bounds */}
-                    <Typography
+     <Typography
   sx={{
     fontSize: "0.875rem",
     color: "#64748b",
@@ -594,7 +606,7 @@ const CoursesPage = ({ viewMode }) => {
     WebkitLineClamp: 3,
     WebkitBoxOrient: "vertical",
     overflow: "hidden",
-    minHeight: "67px", // 3 lines fixed
+    minHeight: "67px",
     maxHeight: "67px"
   }}
 >
